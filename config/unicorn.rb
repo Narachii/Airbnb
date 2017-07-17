@@ -27,7 +27,7 @@ before_fork do |server, worker|
     run_once = false # prevent from firing again
   end
 
-  old_pid = "#{app_path}/shared/tmp/pids/unicorn.pid"
+  old_pid = "#{app_path}/shared/tmp/pids/unicorn.pid.oldbin"
   if File.exists?(old_pid) && server.pid != old_pid
     begin
       Process.kill("QUIT", File.read(old_pid).to_i)
