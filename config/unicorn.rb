@@ -28,12 +28,11 @@ before_fork do |server, worker|
   end
 
   old_pid = "#{app_path}/shared/tmp/pids/unicorn.pid"
-  if File.exist?(old_pid) && server.pid != old_pid
+  if File.exists?(old_pid) && server.pid != old_pid
     begin
-      sig = (worker.nr + 1) >= server.worker_processes ? :QUIT : :TTOU
-      Process.kill(sig, File.read(old_pid).to_i)
-    rescue Errno::ENOENT, Errno::ESRCH => e
-      logger.error e
+      Process.kill("QUIT", File.read(old_pid).to_i)
+    rescue Errno::ENOENT, Errno::ESRCH
+      # someone else did our job for us
     end
   end
 end
