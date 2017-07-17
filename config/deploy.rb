@@ -1,11 +1,6 @@
 # config valid only for current version of Capistrano
 lock "3.8.2"
 
-set :application, "my_app_name"
-set :repo_url, "git@example.com:me/my_repo.git"
-
-# lock '<Capistranoのバージョン>'
-
 set :application, 'Airbnb'
 set :repo_url,  'git@github.com:Narachii/Airbnb.git'
 
@@ -17,7 +12,7 @@ set :rbenv_ruby, '2.3.1'
 set :ssh_options, auth_methods: ['publickey'],
                   keys: ['/Users/NaoyaNara/.ssh/naoya7063.pem']
 
-set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
+set :unicorn_pid, -> { "var/www/Airbnb/shared/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 
