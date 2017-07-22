@@ -45,8 +45,8 @@
 
 
 ### Association
--belongs_to :user
--belongs_to :host
+- belongs_to :user
+- belongs_to :host
 
 ## Host_reiews
 ---
@@ -57,8 +57,8 @@
 |text    |text    |null false|
 
 ### Association
-belongs_to :user
-belongs_to :host
+- belongs_to :user
+- belongs_to :host
 
 ## Bookings
 ---
@@ -71,9 +71,9 @@ belongs_to :host
 |check_out|date   |null false|
 
 ### Association
--belongs_to :user
--belongs_to :room
--belongs_to :experience
+- belongs_to :user
+- belongs_to :room
+- belongs_to :experience
 
 
 ## Rooms
@@ -90,9 +90,9 @@ belongs_to :host
 |longitude|float|-|
 
 ### Associations
--belongs_to :host
--belongs_to :detail
--has_many :reviews
+- belongs_to :host
+- belongs_to :detail
+- has_many :reviews
 
 ## details
 |Column  | Type  |Options|
@@ -108,7 +108,7 @@ belongs_to :host
 |cleaning-fee|integer|-|
 
 ### Association
--belongs_to :room
+- belongs_to :room
 
 
 ## experiences
@@ -135,6 +135,6 @@ belongs_to :host
 |longitude|float|-|
 
 ### Associations
--belongs_to :host
--belongs_to :book
--has_many :reviews
+- belongs_to :host
+- belongs_to :book
+- has_many :reviews
