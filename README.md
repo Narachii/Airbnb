@@ -45,8 +45,8 @@
 
 
 ### Association
-belongs_to :user
-belongs_to :host
+-belongs_to :user
+-belongs_to :host
 
 ## Host_reiews
 ---
