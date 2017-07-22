@@ -1,24 +1,140 @@
-# README
+# Data Base
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+---
+## Users
+---
+|Column  | Type  |Options|
+|:----:  |:----: |:-----:|
+|name    |string |null false|
+|image   |text |-|
+|gender|string|-|
+|Phone number|integer|-|
+|language|string|-|
+|currency|string||
+|location|text|-|
+|text|text|-|
+|latitude |float |-|
+|longitude|float|-|
 
-Things you may want to cover:
+### Association
+ - belongs_to :host
+ - has_many :user_reviews
+ - has_many :host_reviews
+ - has_many :Reviews
+ - has_many :books
+ 
+## Hosts
+ ---
+|Column  | Type  |Options|
+|:----:  |:----: |:-----:|
+|user_id  |string |null false,foreign_key :true|
 
-* Ruby version
+### Association
+- belongs_to :User
+- has_many :host_comments
+- has_many :rooms
+- has_many :experiences
 
-* System dependencies
+## User_reviews
+---
+|Column  | Type  |Options|
+|:----:  |:----: |:-----:|
+|user_id  |integer |null false,foreign_key :true|
+|host_id  |integer |null false, foreign_key :true|
+|text     |text    |null false|
 
-* Configuration
 
-* Database creation
+### Association
+belongs_to :user
+belongs_to :host
 
-* Database initialization
+## Host_reiews
+---
+|Column  | Type  |Options|
+|:----:  |:----: |:-----:|
+|user_id |integer |null false,foreign_key :true|
+|host_id |integer |null false,foreign_key :true|
+|text    |text    |null false|
 
-* How to run the test suite
+### Association
+belongs_to :user
+belongs_to :host
 
-* Services (job queues, cache servers, search engines, etc.)
+## Bookings
+---
+|Column  | Type  |Options|
+|:----:  |:----: |:-----:|
+|user_id |integer |null false,foreign_key :true|
+|room_id |integer |null false,foreign_key :true|
+|guest_numbers|integer|null false|
+|check_in|date    |null false|
+|check_out|date   |null false|
 
-* Deployment instructions
+### Association
+-belongs_to :user
+-belongs_to :room
+-belongs_to :experience
 
-* ...
+
+## Rooms
+---
+|Column  | Type  |Options|
+|:----:  |:----: |:-----:|
+|host_id |integer |null false,foreign_key :true|
+|name|string|null false|
+|image|text|null false|
+|price|integer|null false|
+|availability|integer|-|
+|location|text|null false|
+|latitude |float |-|
+|longitude|float|-|
+
+### Associations
+-belongs_to :host
+-belongs_to :detail
+-has_many :reviews
+
+## details
+|Column  | Type  |Options|
+|:----:  |:----: |:-----:|
+|room_id |integer |null false,foreign_key :true|
+|accomodate|integer|null false|
+|bathrooms|integer|null false|
+|Bed rooms|integer|null false|
+|Beds     |integer|null false|
+|property-type|string|null false|
+|Extra-people-price|integer|-|
+|weekly-discount|integer|-|
+|cleaning-fee|integer|-|
+
+### Association
+-belongs_to :room
+
+
+## experiences
+---
+|Column  | Type  |Options|
+|:----:  |:----: |:-----:|
+|host_id |integer |null false,foreign_key :true|
+|name|string|null false|
+|image|text|null false|
+|movie|text|-|
+|hours|integer|null false|
+|offer|text|null false|
+|language|string|null false|
+|price|integer|null false|
+|availability|integer|-|
+|host_text|text|-|
+|provision|text|-|
+|notes|text|-|
+|plan|text|-|
+|place|text|-|
+|availability|date|-|
+|location|text|null false|
+|latitude |float |-|
+|longitude|float|-|
+
+### Associations
+-belongs_to :host
+-belongs_to :book
+-has_many :reviews
