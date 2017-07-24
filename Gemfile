@@ -35,6 +35,7 @@ gem 'haml-rails'
 gem 'devise'
 gem "font-awesome-rails"
 gem 'font-awesome-sass', '~> 4.5.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
