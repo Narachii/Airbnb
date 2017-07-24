@@ -1,0 +1,88 @@
+.footer__top
+	.column
+		.s-wrapper
+			%select#lang_selector.selector{name: "lang_selector"}
+				=render "options"
+		.s-wrapper
+			%select#currency-selector.currency_selector{name: "currency-selector"}
+				=render "currency"
+	.column__info
+		.div
+			%section
+				%h3.head
+					%span Airbnb
+				.div{style: 'margin-top:16px;'}
+					%ul
+						%li.list_info
+							=link_to "About us" ,root_path
+						%li.list_info
+							=link_to "Careers" ,root_path
+						%li.list_info
+							=link_to "Press" ,root_path
+						%li.list_info
+							=link_to "Policies" ,root_path
+						%li.list_info
+							=link_to "Help" ,root_path
+						%li.list_info
+							=link_to "Diversity & Belonging" ,root_path
+	.column__discover
+		.div
+			%section
+				%h3.head
+					%span Discover
+				.div.b{style: 'margin-top:16px;'}
+					%ul
+						%li.list_info
+							=link_to "Trust & Safety" ,root_path,class: "link_info"
+						%li.list_info
+							=link_to "Travel Credit" ,root_path
+						%li.list_info
+							=link_to "Gift Cards" ,root_path
+						%li.list_info
+							=link_to "Airbnb Citizen" ,root_path
+						%li.list_info
+							=link_to "Business Travel" ,root_path
+						%li.list_info
+							=link_to "Guidebooks" ,root_path
+						%li.list_info
+							=link_to "Airbnbmag" ,root_path
+	.column__hosting
+		.div
+			%section
+				%h3.head
+					%span Hosting
+				.div.b{style: 'margin-top:16px;'}
+					%ul
+						%li.list_info
+							=link_to "Why Host" ,root_path
+						%li.list_info
+							=link_to "Hospitality" ,root_path
+						%li.list_info
+							=link_to "Responsible Hosting" ,root_path
+						%li.list_info
+							=link_to "Community Center" ,root_path
+.div{style: 'margin-top: 48px; margin-bottom: 24px; clear:both;'}
+	.line{style: "margin-top: 16px; margin-bottom: 16px;"}
+		.ruler
+.footer__bottom
+	.left-content
+		.bottom-logo
+			=image_tag("logo3.jpg", class: "b-logo")
+		.bottom-text © Bairbnb, Inc.
+	.right-content
+		%ul
+			%li.items
+				%span.social-icon
+					=link_to fa_icon("facebook"),"https://www.facebook.com",target: "_bank"
+				%span.social-icon
+					=link_to fa_icon("twitter"),"https://twitter.com" ,target: "_bank"
+				%span.social-icon
+					=link_to fa_icon("instagram"),"https://www.instagram.com",target: "_bank"
+			%li.items
+				=link_to "Site Map" ,root_path
+			%li.items
+				=link_to "Privacy" ,root_path
+			%li.items
+				=link_to "Terms", root_path
+			%li.items
+
