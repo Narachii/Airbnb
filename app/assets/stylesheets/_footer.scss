@@ -1,0 +1,135 @@
+.footer__top{
+	height:186px;
+}
+
+
+.column{
+	float:left;
+	&__info{
+		width:160px;
+		float:left;
+		padding:0 8px;
+		margin-left:87px;
+	}
+	&__discover{
+		width:160px;
+		float:left;
+		padding:0 8px;
+		margin-left:87px;
+	}
+	&__hosting{
+		width:160px;
+		float:left;
+		padding:0 8px;
+		margin-left:87px;
+	}
+	// .head{
+	// }
+}
+
+
+
+.s-wrapper{
+	width:244px;
+	height:46px;
+	border:1px solid #DBDBDB;
+	margin-bottom: 8px;
+	background: #ffffff;
+	border-radius: 2px;
+}
+
+select{
+    color: #484848 !important;
+    font-weight: 300 !important;
+    background-color: transparent !important;
+    border: none !important;
+    padding: 11px !important;
+    padding-right: 40px !important;
+    height: 46px !important;
+    display: block !important;
+    width: 100% !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+	  font-size: 19px;
+	  line-height: 24px;
+}
+
+.head{
+	font-size: 15px;
+	font-weight: 700;
+	color: #484848;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+}
+
+.selector{
+	padding-bottom: 2px;
+}
+
+ul{
+color: #484848 !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    margin: 0px !important;
+    word-wrap: break-word !important;
+    font-size: 15px !important;
+    line-height: 18px !important;
+    letter-spacing: 0.2px !important;
+}
+
+
+.list_info{
+	text-decoration: none;
+	clear:both;
+	margin-bottom: 4px;
+	color: #767676;
+}
+
+.ruler{
+	border-bottom: 1px solid #DBDBDB
+}
+a {
+text-decoration: none;
+color:inherit;
+}
+
+.left-content{
+	width:504px;
+	float:left;
+}
+
+
+.b-logo{
+width:22.5px;
+height:22.5px;
+float:left;
+margin-right:8px;
+}
+
+.bottom-text{
+float:left;
+font-weight: normal ;
+color: #767676;
+font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+word-wrap: break-word ;
+font-size: 15px ;
+line-height: 18px ;
+letter-spacing: 0.2px;
+}
+
+.right-content{
+	float:right;
+	width:524px;
+}
+
+.socials{
+
+}
+.items{
+	float:right;
+	margin-bottom: 4px;
+	padding-left: 8px;
+	color: #767676;
+	font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+}
+
+.social-icon{
+	padding: 0 8px;
+}

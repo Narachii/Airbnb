@@ -1,0 +1,14 @@
+.content{
+	height:381px;
+	border-top:1px solid #DBDBDB;
+	&__main{
+		width:1080px;
+		background-color: transparent;
+		padding-top: 48px !important;
+	  padding-bottom: 48px !important;
+	  margin: 0 auto !important;
+	  position: relative !important;
+	  padding-left: 24px !important;
+	  padding-right: 24px !important;
+	}
+}

@@ -1,0 +1,31 @@
+.head-content
+	.icon
+		=link_to image_tag("logo2.jpg", class: "logo"),root_path
+	.head-content__plan
+		.container
+			Add "plan box" later
+	.head-content__info
+		%ul
+			%li.info_list
+				=link_to "Log In",root_path,class: "info"
+			%li.info_list
+				=link_to "Sign Up",root_path,class: "info"
+			%li.info_list
+				=link_to "Help",root_path,class: "info"
+			%li.info_list
+				=link_to "Become a Host",root_path,class: "info"
+	.head-content__nav
+		%ul
+			%li.nav_list
+				.wrapper
+					=link_to "FOR YOU",root_path,class: "nav"
+			%li.nav_list
+				.wrapper
+					=link_to "HOMES",root_path,class: "nav"
+			%li.nav_list
+				.wrapper
+					=link_to "EXPERIENCES",root_path,class: "nav"
+			%li.nav_list
+				.wrapper
+					=link_to "PLACES",root_path,class: "nav"
+
