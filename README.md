@@ -5,7 +5,8 @@
 ---
 |Column  | Type  |Options|
 |:----:  |:----: |:-----:|
-|name    |string |null false|
+|first_name    |string |null false|
+|last_name    |string |null false|
 |image   |text |-|
 |gender|string|-|
 |Phone number|integer|-|
