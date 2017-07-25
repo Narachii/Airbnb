@@ -5,9 +5,12 @@
 ---
 |Column  | Type  |Options|
 |:----:  |:----: |:-----:|
-|first_name    |string |null false|
-|last_name    |string |null false|
-|image   |text |-|
+|first_name|string |null false|
+|last_name|string |null false|
+|birthday_month|integer|null false|
+|birthday_day|integer|null false|
+|birthday_year|integer|null false|
+|image|text |-|
 |gender|string|-|
 |Phone number|integer|-|
 |language|string|-|
