@@ -1,0 +1,63 @@
+.logIn-content{
+	width:100%;
+	z-index:2;
+	position: fixed;
+	top: 10%;
+}
+.content-box__session{
+	height:480px;
+	width:504px;
+	padding:32px;
+	background-color: white;
+	margin:0 auto;
+}
+
+.check-box{
+		font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+		font-size:19px;
+		font-weight: 300;
+		float:left;
+		display: inline-block;
+		// padding-left: 30px;
+		width:504px;
+}
+
+
+.check-box2 {
+	padding-left:	38px;			/* ラベルの位置 */
+	font-size:		40px;
+	line-height:		32px;
+	display:		inline-block;
+	cursor:			pointer;
+	position:	fixed;
+}
+
+.link-text{
+	font-size: 19px;
+float:right;
+color:#008489;
+}
+
+.facebook{
+	width:100%;
+  border: 2px solid transparent;
+  border-radius: 4px;
+	font-size: 19px;
+	padding:11px;
+	background: #4568b2;
+	font-weight: 500;
+	color: #ffffff ;
+}
+
+.Google{
+	width:100% ;
+	border: 2px solid transparent;
+  border-radius: 4px;
+	font-size: 19px;
+	padding:11px;
+	font-weight: 500;
+	background-color: #ffffff;
+	border-color: #767676;
+	color:#767676;
+	margin-top:8px;
+}
