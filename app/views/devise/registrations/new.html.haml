@@ -1,0 +1,61 @@
+.signUp-content
+  .content-box
+    %div{style: "margin-bottom:24px;"}︎
+    %button.cancel-button︎
+    %div
+      .content-box__links
+        %span Sign up with
+        =link_to "Facebook" ,root_path,class: "f-link"
+        %span or
+        =link_to "Google" ,root_path,class: "g-link"
+    %div{style: "margin:16px 0; text-align:center;"}
+      %span.border or
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      .field
+        = f.email_field :email, autofocus: true , placeholder: "Email address", class: "form"
+        %i.fa.fa-envelope-o.form-icon
+      .field
+        = f.text_field :first_name, autofocus: true , placeholder: "First name", class: "form"
+        %i.fa.fa-user-o.form-icon
+      .field
+        = f.text_field :last_name, autofocus: true , placeholder: "Last name", class: "form"
+        %i.fa.fa-user-o.form-icon
+      .field
+        = f.password_field :password, autocomplete: "off",placeholder: "Create a Password",class: "form"
+        %i.fa.fa-lock.form-icon
+      %div
+        %span{style: "font-size: 19px; line-height: 24px"} Birthday
+        .birth-text
+          To sign up, you must be 18 or older. Other people won’t see your birthday.
+        .birth-wrapper
+          .birth-selector
+            %select{id: "user[birthday_month]" ,name: "user[birthday_month]"}
+              =render "month-options"
+        .birth-wrapper__days
+          .birth-selector
+            %select{id: "user[birthday_day]" ,name: "user[birthday_day]"}
+              =render "days-options"
+        .birth-wrapper__year
+          .birth-selector
+            %select{id: "user[birthday_year]" ,name: "user[birthday_year]"}
+              =render "year-options"
+      %div.signUp-text
+        %span By clicking Sign up or Continue with, I agree to Airbnb’s
+        =link_to "Terms of Service,",root_path,class: "terms"
+        =link_to "Payments Terms of Service,",root_path,class: "terms"
+        =link_to "Privacy Policy,",root_path,class: "terms"
+        %span and
+        =link_to "Nondiscrimination Policy.,",root_path,class: "terms"
+        .actions
+          = f.submit "Sign up",class: "signUp-button"
+    %div{style: "margin:16px 0;"}
+      .ruler
+    .content-box__bottom
+      %span Already have an Bairbnb account?
+      = render "devise/shared/links"
+
+
+
+/ fa-user-o
+/ fa-lock/ .field/   = f.label :password_confirmation%br//   = f.password_field :password_confirmation, autocomplete: "off",class: "form"
