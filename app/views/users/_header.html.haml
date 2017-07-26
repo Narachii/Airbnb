@@ -6,12 +6,20 @@
 			Add "plan box" later
 	.head-content__info
 		%ul
-			%li.info_list
-				=link_to "Log In",root_path,class: "info"
-			%li.info_list
-				=link_to "Sign Up",root_path,class: "info"
-			%li.info_list
-				=link_to "Help",root_path,class: "info"
+			-if user_signed_in?
+				%li.info_list
+					=link_to "Log Out",destroy_user_session_path, method: :delete,class: "info"
+				%li.info_list
+					=link_to "Help",root_path,class: "info"
+				%li.info_list
+					=link_to "Messages",root_path,class: "info"
+			-else
+				%li.info_list
+					%div{class: "info",id: "Login"}Log In
+				%li.info_list
+					%div{class: "info",id: "signUp"} Sign Up
+				%li.info_list
+					=link_to "Help",root_path,class: "info"
 			%li.info_list
 				=link_to "Become a Host",root_path,class: "info"
 	.head-content__nav
@@ -29,3 +37,5 @@
 				.wrapper
 					=link_to "PLACES",root_path,class: "nav"
 
+/ %li.info_list
+/ 	=link_to "Trips",root_path,class: "info"
