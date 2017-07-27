@@ -1,0 +1,38 @@
+.head-content.hosts
+	.icon
+		=link_to image_tag("logo2.jpg", class: "logo"),root_path
+	.search-bar
+		%form.search{action: "users/search"}
+			.search-bar__container
+				=form_tag "/users/index", method: :get do
+					%input.search{"aria-label" => "Search", :autocomplete => "off", :name => "location", :placeholder => "Search", :type => "text"}
+	%ul.lists
+		-if user_signed_in?
+			%li.info_list
+				=link_to "Log Out",destroy_user_session_path, method: :delete,class: "info"
+			%li.info_list
+				=link_to "Help",root_path,class: "info"
+			%li.info_list
+				=link_to "Messages",root_path,class: "info"
+			%li.info_list
+				=link_to "Host",user_hosts_path(current_user),class: "info"
+		-else
+			%li.info_list
+				%div{class: "info",id: "Login"}Log In
+			%li.info_list
+				%div{class: "info",id: "signUp"} Sign Up
+			%li.info_list
+				=link_to "Help",root_path,class: "info"
+.header__photo
+	.photo__container
+		.container__wrapper
+			.container__main
+				.container__body
+					.container__box
+						%h1.container__text
+							%strong Earn money as an Bairbnb
+							%br host
+						%p.container__sentence
+							From saving for home repairs to taking a dream trip, hosts use extra income to fund their passions.
+						%button.hosting-button
+							=link_to "Start Hosting",root_path

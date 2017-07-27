@@ -13,6 +13,8 @@
 					=link_to "Help",root_path,class: "info"
 				%li.info_list
 					=link_to "Messages",root_path,class: "info"
+				%li.info_list
+					=link_to "Become a Host",user_hosts_path(current_user),class: "info"
 			-else
 				%li.info_list
 					%div{class: "info",id: "Login"}Log In
@@ -20,8 +22,6 @@
 					%div{class: "info",id: "signUp"} Sign Up
 				%li.info_list
 					=link_to "Help",root_path,class: "info"
-			%li.info_list
-				=link_to "Become a Host",root_path,class: "info"
 	.head-content__nav
 		%ul
 			%li.nav_list
