@@ -2,10 +2,79 @@
 	.column
 		.s-wrapper
 			%select#lang_selector.selector{name: "lang_selector"}
-				=render "options"
+				%option{lang: "id", value: "id"} Bahasa Indonesia
+				%option{lang: "ms", value: "ms"} Bahasa Melayu
+				%option{lang: "ca", value: "ca"} Català
+				%option{lang: "da", value: "da"} Dansk
+				%option{lang: "de", value: "de"} Deutsch
+				%option{lang: "en", value: "en"} English
+				%option{lang: "es", value: "es"} Español
+				%option{lang: "el", value: "el"} Eλληνικά
+				%option{lang: "fr", value: "fr"} Français
+				%option{lang: "hr", value: "hr"} Hrvatski
+				%option{lang: "it", value: "it"} Italiano
+				%option{lang: "hu", value: "hu"} Magyar
+				%option{lang: "nl", value: "nl"} Nederlands
+				%option{lang: "no", value: "no"} Norsk
+				%option{lang: "pl", value: "pl"} Polski
+				%option{lang: "pt", value: "pt"} Português
+				%option{lang: "fi", value: "fi"} Suomi
+				%option{lang: "sv", value: "sv"} Svenska
+				%option{lang: "tr", value: "tr"} Türkçe
+				%option{lang: "is", value: "is"} Íslenska
+				%option{lang: "cs", value: "cs"} Čeština
+				%option{lang: "ru", value: "ru"} Русский
+				%option{lang: "th", value: "th"} ภาษาไทย
+				%option{lang: "zh", value: "zh"} 中文 (简体)
+				%option{lang: "zh-TW", value: "zh-TW"} 中文 (繁體)
+				%option{lang: "ja", value: "ja"} 日本語
+				%option{lang: "ko", value: "ko"} 한국어
 		.s-wrapper
 			%select#currency-selector.currency_selector{name: "currency-selector"}
-				=render "currency"
+				%option{value: "AED"} AED
+				%option{value: "ARS"} ARS
+				%option{value: "AUD"} AUD
+				%option{value: "BGN"} BGN
+				%option{value: "BRL"} BRL
+				%option{value: "CAD"} CAD
+				%option{value: "CHF"} CHF
+				%option{value: "CLP"} CLP
+				%option{value: "CNY"} CNY
+				%option{value: "COP"} COP
+				%option{value: "CRC"} CRC
+				%option{value: "CZK"} CZK
+				%option{value: "DKK"} DKK
+				%option{value: "EUR"} EUR
+				%option{value: "GBP"} GBP
+				%option{value: "HKD"} HKD
+				%option{value: "HRK"} HRK
+				%option{value: "HUF"} HUF
+				%option{value: "IDR"} IDR
+				%option{value: "ILS"} ILS
+				%option{value: "INR"} INR
+				%option{value: "JPY"} JPY
+				%option{value: "KRW"} KRW
+				%option{value: "MAD"} MAD
+				%option{value: "MXN"} MXN
+				%option{value: "MYR"} MYR
+				%option{value: "NOK"} NOK
+				%option{value: "NZD"} NZD
+				%option{value: "PEN"} PEN
+				%option{value: "PHP"} PHP
+				%option{value: "PLN"} PLN
+				%option{value: "RON"} RON
+				%option{value: "RUB"} RUB
+				%option{value: "SAR"} SAR
+				%option{value: "SEK"} SEK
+				%option{value: "SGD"} SGD
+				%option{value: "THB"} THB
+				%option{value: "TRY"} TRY
+				%option{value: "TWD"} TWD
+				%option{value: "UAH"} UAH
+				%option{value: "USD"} USD
+				%option{value: "UYU"} UYU
+				%option{value: "VND"} VND
+				%option{value: "ZAR"} ZAR
 	.column__info
 		.div
 			%section
@@ -68,7 +137,7 @@
 	.left-content
 		.bottom-logo
 			=image_tag("logo3.jpg", class: "b-logo")
-		.bottom-text © BBairbnb, Inc.
+		.bottom-text © Bairbnb, Inc.
 	.right-content
 		%ul
 			%li.items

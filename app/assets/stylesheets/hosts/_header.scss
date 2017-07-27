@@ -1,0 +1,97 @@
+.hosts{
+height:65px;
+	position: relative;
+}
+.search-bar{
+	float:left;
+	border-left: 1px solid #DBDBDB;
+	padding:0 48px;
+
+}
+.search{
+	width:919px;
+	height: 64px;
+	border:none;
+	font-size:15px;
+	font-weight: 100;
+}
+
+.i.fa.fa-search{
+	left:7%;
+	top:4%;
+	position: fixed;
+	font-size:15px;
+	font-weight: 100;
+	 color: #767676;
+}
+
+.header__photo{
+	height:502px;
+	background-color: gray;
+}
+
+.photo__container{
+	width:100%;
+	height:502px;
+	background-image: url("https://www.airbnb.com/community-stories/images/hero/465_1384200320.439708.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+.container{
+	&__wrapper{
+	width:1032px;
+	height:502px;
+	padding:0 24px;
+	margin: 0 auto;
+	}
+	&__main{
+		width:406px;
+		height:402px;
+		padding:0 12px;
+		margin:50px 0;
+		background-color: #00a699;
+		float:left;
+	}
+	&__box{
+		padding:0 12px;
+		margin-left:35.828px;
+		height:100%;
+		width:75%;
+	}
+	&__text{
+		padding-top:48px;
+		color: #fff;
+		font-weight: bold;
+		font-size: 40px;
+		margin-bottom: 15px;
+	}
+
+	&__body{
+		margin-left: -12px;
+    margin-right: -12px;
+	}
+
+	&__sentence{
+		color: #fff;
+    font-size: 17px;
+    margin:24px 0;
+    font-weight: 200;
+	}
+}
+
+.hosting-button{
+	background-color: #FF5A5F;
+	transition: background 0.3s, border-color 0.3s;
+  text-align: center ;
+  text-decoration: none;
+  border: 2px solid transparent !important;
+  border-radius: 4px !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 17px !important;
+  line-height: 22px !important;
+  letter-spacing: undefined !important;
+  padding: 9px 27px;
+  color: #ffffff ;
+  font-weight: 400;
+}
