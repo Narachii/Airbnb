@@ -1,5 +1,5 @@
 .head-content.hosts
-	.icon
+	.icon{style: "width:100px;"}
 		=link_to image_tag("logo2.jpg", class: "logo"),root_path
 	.search-bar
 		%form.search{action: "users/search"}
@@ -14,8 +14,9 @@
 				=link_to "Help",root_path,class: "info"
 			%li.info_list
 				=link_to "Messages",root_path,class: "info"
-			%li.info_list
-				=link_to "Host",user_hosts_path(current_user),class: "info"
+			-if current_user.host
+				%li.info_list
+					=link_to "Host","/users/#{current_user.id}/hosts/#{current_user.host.id}",class: "info"
 		-else
 			%li.info_list
 				%div{class: "info",id: "Login"}Log In
@@ -23,16 +24,3 @@
 				%div{class: "info",id: "signUp"} Sign Up
 			%li.info_list
 				=link_to "Help",root_path,class: "info"
-.header__photo
-	.photo__container
-		.container__wrapper
-			.container__main
-				.container__body
-					.container__box
-						%h1.container__text
-							%strong Earn money as an Bairbnb
-							%br host
-						%p.container__sentence
-							From saving for home repairs to taking a dream trip, hosts use extra income to fund their passions.
-						%button.hosting-button
-							=link_to "Start Hosting",root_path

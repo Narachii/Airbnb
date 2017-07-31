@@ -1,0 +1,14 @@
+.header__photo
+	.photo__container
+		.container__wrapper
+			.container__main
+				.container__body
+					.container__box
+						%h1.container__text
+							%strong Earn money as an Bairbnb
+							%br host
+						%p.container__sentence
+							From saving for home repairs to taking a dream trip, hosts use extra income to fund their passions.
+						=form_tag user_hosts_path, method: :post do
+							%button.hosting-button
+								Start Hosting
