@@ -1,0 +1,78 @@
+.rooms{
+	height:64px;
+	position: relative;
+	padding:0;
+	box-shadow: none;
+	border-bottom:none;
+}
+.step{
+	&__bar{
+		float:left;
+		border-left: 1px solid #DBDBDB;
+		padding: 0 19px;
+		height: 100%;
+		color: #484848;
+	}
+	&__text{
+	padding-top:15px;
+	font-size: 19px;
+	}
+
+	&__bar-right{
+		float:right;
+		padding-top:15px;
+		padding-right: 19px;
+		color: #008489;
+		font-size: 18px;
+		font-weight: 350;
+	}
+}
+
+.head-content__bottom{
+	height:46px;
+}
+
+.bottom__block{
+	width: 12.27%;
+	float:left;
+	padding:12px 14px;
+	font-size: 14px;
+	font-weight: 400;
+	background-color: #fafafa;
+	vertical-align: top;
+	border-left: 1px solid #dce0e0;
+	border-top: 1px solid #dce0e0;
+	border-bottom:none;
+	font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+}
+
+.progress-bar{
+	width:12.34%;
+	background-color: #00a699;
+  border-right-color: #00a699;
+  height: 5px;
+  float:left;
+  padding:0 14px;
+}
+
+.content{
+
+	&__guest{
+	  padding-left: 8px;
+    padding-right: 8px;
+    min-height: 1px;
+    position: relative;
+    width: 50%;
+    float:left;
+    padding-top:5px;
+    font-size:19px ;
+  }
+  &__wrapper{
+  margin-bottom:32px;
+	float:left;
+	width: 66.66666666666666%;
+  }
+}
+
+
+//#008489
