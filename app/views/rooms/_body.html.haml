@@ -1,0 +1,76 @@
+.body__rooms
+	.body__left
+		.request__form
+			.request__title What kind of place are you listing?
+			.request__content
+				%div.form__list
+					%span
+					Is this listing a home, hotel, or something else?
+					.s-wrapper
+						%select#lang_selector.selector{name: "lang_selector"}
+							%option{value: "listing_category_type_home"} Home
+							%option{value: "listing_category_type_hotel"} Hotel
+							%option{value: "listing_category_type_other"} Something else
+				%div.form__list{style: "margin:32px 0;"}
+					%span
+					What type of property is this?
+					.s-wrapper
+						%select#lang_selector.selector{name: "house_type" ,id: "house-type"}
+							%option{disabled:  "", value:  ""} Select one
+							%option{value:  "1"} Apartment
+							%option{value:  "37"} Condominium
+							%option{value:  "40"} Guesthouse
+							%option{value:  "2"} House
+							%option{value:  "52"} In-law
+							%option{value:  "53"} Guest suite
+							%option{value:  "36"} Townhouse
+							%option{value:  "39"} Vacation home
+							%option{disabled:  "", value:  "-1"} ──────────────
+							%option{value:  "8"} Boat
+							%option{value:  "38"} Bungalow
+							%option{value:  "4"} Cabin
+							%option{value:  "5"} Castle
+							%option{value:  "18"} Cave
+							%option{value:  "22"} Chalet
+							%option{value:  "9"} Dorm
+							%option{value:  "23"} Earth House
+							%option{value:  "24"} Hut
+							%option{value:  "12"} Igloo
+							%option{value:  "19"} Island
+							%option{value:  "10"} Lighthouse
+							%option{value:  "35"} Loft
+							%option{value:  "28"} Plane
+							%option{value:  "32"} Camper/RV
+							%option{value:  "34"} Tent
+							%option{value:  "16"} Tipi
+							%option{value:  "25"} Train
+							%option{value:  "6"} Treehouse
+							%option{value:  "11"} Villa
+							%option{value:  "15"} Yurt
+							%option{value:  "33"} Other
+				%div.form__list{style: "margin:32px 0;"}
+					%span
+					What will guests have?
+					.s-wrapper
+						%select#lang_selector.selector{name: "lang_selector"}
+							%option{value: "listing_category_type_home"} Entire Place
+							%option{value: "listing_category_type_hotel"} Private room
+							%option{value: "listing_category_type_other"} shared
+				%div.form__list{style: "margin:32px 0;"}
+					%fieldset
+						%legend
+							%div Is this set up as a dedicated guest space?
+						%div{style: "margin:16px 0;"}
+							%label
+								%input{type: "radio" ,name: "personalBelonging" ,value: "keep_personal_belonging_here"}
+								%span Yes, it’s primarily set up for guests
+						%div
+							%label
+								%input{type: "radio" ,name: "personalBelonging" ,value: "keep_personal_belonging_here"}
+								%span No, I keep my personal belongings here
+			.request__bottom.form_list
+				.back
+					=link_to "← Back","/users/#{current_user.id}/hosts/#{current_user.host.id}"
+				.next
+					=link_to "Next", bedrooms_user_host_rooms_path
+	.body__right

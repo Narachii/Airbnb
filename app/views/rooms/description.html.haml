@@ -1,0 +1,41 @@
+.main
+	%header
+		= render "header2"
+	.body
+		.body__rooms
+			.body__left
+				.request__form{style: "overflow:scroll;"}
+					.request__title Edit your description
+					.request__content
+						%div.form__list
+						= form_for @room, url: locations_user_host_rooms_path do |f|
+							.field{style: "float: left; margin-top:5px;"}
+								%div.text{style: "font-size:18px;"} Summery
+								= f.text_field :location,autofocus: true , class: "form__summery"
+							.form__list
+								.text
+									My place is great for
+								.check_box__wrapper
+									%label.check_box
+										.field.check{style: "margin-top:5px; float:left;"}
+											= f.check_box :location
+											%div{style: "padding-left:8px; float:left;"}
+											%span Families (with kids)
+								.check_box__wrapper
+									%label.check_box
+										.field.check{style: "margin-top:5px; float:left;"}
+											= f.check_box :location
+											%div{style: "padding-left:8px; float:left;"}
+											%span Big groups
+								.check_box__wrapper
+									%label.check_box
+										.field.check{style: "margin-top:5px; float:left;"}
+											= f.check_box :location
+											%div{style: "padding-left:8px; float:left;"}
+											%span Furry friends (pets)
+					.request__bottom.form_list.form_position
+						.back
+							=link_to "← Back",locations_user_host_rooms_path
+						.next
+							=link_to "Next", title_user_host_rooms_path
+			.body__right

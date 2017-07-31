@@ -1,0 +1,32 @@
+.head-content.rooms
+	.icon{style: "font-size:10px; height:64px;"}
+		=link_to image_tag("logo4.png", class: "logo"),root_path
+	.step__bar
+		.step__text
+			%span Step 1:
+			%span Start with the basics
+	.step__bar-right
+		=link_to "Save and Exit",root_path
+.head-content__bottom
+	.bottom__block{style: "border-left: none"}
+		=link_to "Place type", "/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/room"
+	.bottom__block
+		=link_to "Bedrooms", bedrooms_user_host_rooms_path
+	.bottom__block
+		=link_to "Sleeping arrangements",bed_details_user_host_rooms_path
+	.bottom__block
+		=link_to "Bath", bathrooms_user_host_rooms_path
+	.bottom__block
+		=link_to "Location", locations_user_host_rooms_path
+	.bottom__block
+		=link_to "Amenities", amenities_user_host_rooms_path
+	.bottom__block
+		=link_to "Shared spaces", spaces_user_host_rooms_path
+.progress-bars
+	.progress-bar.first
+	.progress-bar.second
+	.progress-bar.third
+	.progress-bar.fourth
+	.progress-bar.fifth
+	.progress-bar.sixth
+	.progress-bar.seventh

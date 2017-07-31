@@ -1,0 +1,71 @@
+.main
+	%header
+		= render "header"
+	.body
+		.body__rooms
+			.body__left
+				.request__form{style: "overflow:scroll;"}
+					.request__title What spaces can guests use?
+					.request__content
+						%div.form__list
+							= form_for @room, url: amenities_user_host_rooms_path do |f|
+								.check_box__wrapper
+									%label.check_box
+										.field.check{style: "margin-top:5px; float:left;"}
+											= f.check_box :location
+											%div{style: "padding-left:8px; float:left;"}
+											%span Private living room
+								.check_box__wrapper
+									%label.check_box
+										.field.check{style: "margin-top:5px; float:left;"}
+											= f.check_box :location
+											%div{style: "padding-left:8px; float:left;"}
+											%span Pool
+								.check_box__wrapper
+									%label.check_box
+										.field.check.c{style: "margin-top:5px; float:left;"}
+											= f.check_box :location
+											%div{style: "padding-left:8px; float:left;"}
+											%span Kitchen
+								.check_box__wrapper
+									%label.check_box
+										.field.check{style: "margin-top:5px; float:left;"}
+											= f.check_box :location
+											%div{style: "padding-left:8px; float:left;"}
+											%span Laundry – washer
+								.check_box__wrapper
+									%label.check_box
+										.field.check{style: "margin-top:5px; float:left;"}
+											= f.check_box :location
+											%div{style: "padding-left:8px; float:left;"}
+											%span Laundry – dryer
+								.check_box__wrapper
+									%label.check_box
+										.field.check{style: "margin-top:5px; float:left;"}
+											= f.check_box :location
+											%div{style: "padding-left:8px; float:left;"}
+											%span Parking
+								.check_box__wrapper
+									%label.check_box
+										.field.check{style: "margin-top:5px; float:left;"}
+											= f.check_box :location
+											%div{style: "padding-left:8px; float:left;"}
+											%span Elevator
+								.check_box__wrapper
+									%label.check_box
+										.field.check{style: "margin-top:5px; float:left;"}
+											= f.check_box :location
+											%div{style: "padding-left:8px; float:left;"}
+											%span Hot tub
+								.check_box__wrapper
+									%label.check_box
+										.field.check{style: "margin-top:5px; float:left;"}
+											= f.check_box :location
+											%div{style: "padding-left:8px; float:left;"}
+											%span Gym
+					.request__bottom.form_list.form_position
+						.back
+							=link_to "← Back",amenities_user_host_rooms_path
+						.next
+							=link_to "Finish", spaces_user_host_rooms_path
+			.body__right
