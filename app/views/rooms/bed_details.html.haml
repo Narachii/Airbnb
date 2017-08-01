@@ -1,0 +1,29 @@
+.main
+	%header
+		= render "header"
+	.body
+		.body__rooms
+			.body__left
+				.request__form
+					.request__title What kind of beds does your place have?
+					.request__content
+						%div
+							.panel__title{style: "padding:30px 0;"}
+								%h3{style: "font-size:24px;"} Sleeping arrangements
+							.panel__container{style: "paddind-top:30px;"}
+								.container__left{style: "float:left; font-size: 19px;"}
+									%div{style: "padding-top:28px;"}
+										%span Common spaces
+									%div{style: "padding-bottom:28px;"}
+										%span 0 beds
+								.container__right{style: "float:right;"}
+									%button.add_button
+										%span Add beds
+								.bed__details
+								.container__border{style: "margin-bottom:28px;"}
+					.request__bottom.form_list
+						.back
+							=link_to "← Back",bedrooms_user_host_rooms_path
+						.next
+							=link_to "Next", bathrooms_user_host_rooms_path
+			.body__right

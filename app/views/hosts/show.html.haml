@@ -1,0 +1,56 @@
+.main
+	%header
+		= render "header"
+	.body{style: "overflow: auto;"}
+		.body__main2{style: "width:1310px; margin:0 auto; "}
+			.body__left{style: "padding-left:0;"}
+				.request__form{style: "margin:58px 93.50px 100px 100px; padding:0;"}
+					.request__title{style: "font-size:32px;"}
+						Hi,
+						= current_user.last_name + "!"
+						Let’s get started listing
+						%br your space.
+					.request__content
+						%div
+							.panel__title
+								%span STEP 1
+								%h3{style: "font-size:24px;"} Start with the basics
+								%div Beds, bathrooms, amenities, and more
+								.container__left{style: "float:left; font-size: 19px;"}
+									= link_to "/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/room",method: :get do
+										.continue
+											%span Continue
+								.bed__details
+								.container__border{style: "margin-bottom:28px;"}
+						%div
+							.panel__title
+								%span STEP 2
+								%h3{style: "font-size:24px;"} Set the scene
+								%div Photos, short description, title
+								.container__left{style: "float:left; font-size: 19px;"}
+									= link_to "/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/image",method: :get do
+										.continue
+											%span Continue
+								.bed__details
+								.container__border{style: "margin-bottom:28px;"}
+						%div
+							.panel__title
+								%span STEP 3
+								%h3{style: "font-size:24px;"} Get ready for guests
+								%div Booking settings, calendar, price
+								.container__left{style: "float:left; font-size: 19px;"}
+									= link_to "/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/room",method: :get do
+										.continue
+											%span Continue
+								.bed__details
+								.container__border{style: "margin-bottom:28px;"}
+			.body__right{style: "background-color:transparent"}
+				=image_tag("pic1.png")
+	.body__bottom
+		.content
+			.content__main
+				%footer
+					= render "users/footer"
+
+
+

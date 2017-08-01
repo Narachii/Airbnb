@@ -1,0 +1,136 @@
+.image-form{
+	float:none;
+	margin:0 auto;
+	width:852px;
+}
+
+.image-card{
+	width:100%;
+}
+
+.inside{
+		width:100%;
+				border: 2px dashed #bbb;;
+	width:100%;
+	border-radius: 6px;
+  height: 356px;
+	padding:20px;
+	margin-bottom: 100px;
+
+}
+
+.middle__button{
+	text-align: right;
+	background-color: #FF5A5F;
+	transition: background 0.3s, border-color 0.3s;
+	padding:20px 36px;
+  text-align: center ;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 4px ;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 16px;
+  line-height: 22px ;
+  color: #ffffff ;
+  font-weight: 400;
+  position: absolute;
+  top:40%;
+  right:40%;
+  z-index: -1;
+
+	&__wrapper{
+		margin:auto 0;
+	}
+}
+
+.skip{
+	float:right;
+	text-align: right;
+	transition: background 0.3s, border-color 0.3s;
+	padding:9px 27px;
+  text-align: center ;
+  text-decoration: none;
+  border: 1px solid #c4c4c4;
+  border-radius: 4px ;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 16px;
+  line-height: 22px ;
+  font-weight: 400;
+  width:129px;
+  margin: auto 0;
+}
+
+
+
+.hidden{
+	display:none;
+}
+
+//Edit your description
+.form__summery{
+	font-size: 19px;
+	width:442px;
+	height:81px;
+	padding:20px;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+}
+
+.form__title{
+	font-size: 19px;
+	width:442px;
+	padding:20px;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+}
+
+.form__image{
+	font-size: 19px;
+	width:100px;
+	padding:20px;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+}
+
+.form__phone{
+	height: 63px;
+	width:138px;
+	padding:0 20px;
+	font-size:19px;
+	border:none;
+	border-left:1px solid #c4c4c4;
+	border-right:1px solid #c4c4c4;
+}
+
+.form__phone-wrapper{
+    background-color: #c4c4c4;
+	   width:70%;
+	   float:left;
+	   margin-top:10px;
+	   border: 1px solid #c4c4c4;
+	   margin-left:20px;
+}
+
+
+.image__button{
+	text-align: right;
+	transition: background 0.3s, border-color 0.3s;
+	padding:20px 36px;
+	margin-top:90px;
+  text-align: center ;
+  text-decoration: none;
+  border: 1px solid #c4c4c4;
+  border-radius: 4px ;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 16px;
+  line-height: 22px ;
+  font-weight: 400;
+  float:left;
+
+}
+
+.phone__code{
+	padding:20px;
+	font-size:19px;
+}
+
+.a{
+	width:10px;
+}
