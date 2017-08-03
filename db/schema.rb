@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170727061913) do
+ActiveRecord::Schema.define(version: 20170803022026) do
+
+  create_table "amenities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "amenity_rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "room_id"
+    t.integer  "amenity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["amenity_id"], name: "index_amenity_rooms_on_amenity_id", using: :btree
+    t.index ["room_id"], name: "index_amenity_rooms_on_room_id", using: :btree
+  end
 
   create_table "hosts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
@@ -19,27 +34,48 @@ ActiveRecord::Schema.define(version: 20170727061913) do
   end
 
   create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "host_id",                     null: false
-    t.string   "name",                        null: false
-    t.text     "image",         limit: 65535, null: false
-    t.integer  "price",                       null: false
-    t.integer  "availability"
-    t.integer  "accomodate",                  null: false
-    t.integer  "bathrooms",                   null: false
-    t.integer  "Bed_rooms",                   null: false
-    t.integer  "Beds",                        null: false
-    t.string   "property_type",               null: false
-    t.integer  "cleaning_fee"
-    t.text     "location",      limit: 65535, null: false
-    t.float    "latitude",      limit: 24
-    t.float    "longitude",     limit: 24
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.integer  "host_id",                                      null: false
+    t.string   "name",                                         null: false
+    t.text     "description",    limit: 65535
+    t.text     "image",          limit: 65535
+    t.string   "place_type"
+    t.string   "property_type"
+    t.string   "room_type"
+    t.integer  "guest_number"
+    t.integer  "bedroom"
+    t.integer  "bed"
+    t.integer  "bathroom"
+    t.string   "country"
+    t.integer  "zipcode"
+    t.text     "state",          limit: 65535
+    t.text     "city",           limit: 65535
+    t.text     "street_address", limit: 65535
+    t.text     "optional",       limit: 65535
+    t.float    "lattitude",      limit: 24
+    t.float    "longitude",      limit: 24
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+    t.boolean  "progress",                     default: false, null: false
+  end
+
+  create_table "space_rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "room_id"
+    t.integer  "space_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_space_rooms_on_room_id", using: :btree
+    t.index ["space_id"], name: "index_space_rooms_on_space_id", using: :btree
+  end
+
+  create_table "spaces", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "item"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "email",                                default: "", null: false
-    t.string   "encrypted_password",                   default: "", null: false
+    t.string   "email",                                default: "",    null: false
+    t.string   "encrypted_password",                   default: "",    null: false
     t.string   "gender"
     t.integer  "phone_number"
     t.string   "language"
@@ -51,20 +87,26 @@ ActiveRecord::Schema.define(version: 20170727061913) do
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                        default: 0,  null: false
+    t.integer  "sign_in_count",                        default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                        null: false
-    t.datetime "updated_at",                                        null: false
-    t.string   "first_name",                                        null: false
-    t.string   "last_name",                                         null: false
-    t.integer  "birthday_month",                                    null: false
-    t.integer  "birthday_day",                                      null: false
-    t.integer  "birthday_year",                                     null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+    t.string   "first_name",                                           null: false
+    t.string   "last_name",                                            null: false
+    t.integer  "birthday_month",                                       null: false
+    t.integer  "birthday_day",                                         null: false
+    t.integer  "birthday_year",                                        null: false
+    t.text     "image",                  limit: 65535
+    t.boolean  "progress",                             default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "amenity_rooms", "amenities"
+  add_foreign_key "amenity_rooms", "rooms"
+  add_foreign_key "space_rooms", "rooms"
+  add_foreign_key "space_rooms", "spaces"
 end
