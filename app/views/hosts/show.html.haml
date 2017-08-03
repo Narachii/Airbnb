@@ -16,10 +16,16 @@
 								%span STEP 1
 								%h3{style: "font-size:24px;"} Start with the basics
 								%div Beds, bathrooms, amenities, and more
-								.container__left{style: "float:left; font-size: 19px;"}
-									= link_to "/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/room",method: :get do
-										.continue
-											%span Continue
+								-if @room == nil
+									.container__left{style: "float:left; font-size: 19px;"}
+										=form_tag user_host_rooms_path(user_id: current_user.id, host_id: params[:id]), method: :post do
+											%button.continue
+												%span Continue
+								-else
+									.container__left{style: "float:left; font-size: 19px;"}
+										=link_to user_host_room_room_steps_path(user_id: current_user.id, host_id: params[:id],room_id: @room.id) do
+											%button.continue
+												%span Continue
 								.bed__details
 								.container__border{style: "margin-bottom:28px;"}
 						%div
@@ -28,9 +34,6 @@
 								%h3{style: "font-size:24px;"} Set the scene
 								%div Photos, short description, title
 								.container__left{style: "float:left; font-size: 19px;"}
-									= link_to "/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/image",method: :get do
-										.continue
-											%span Continue
 								.bed__details
 								.container__border{style: "margin-bottom:28px;"}
 						%div
@@ -39,9 +42,6 @@
 								%h3{style: "font-size:24px;"} Get ready for guests
 								%div Booking settings, calendar, price
 								.container__left{style: "float:left; font-size: 19px;"}
-									= link_to "/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/room",method: :get do
-										.continue
-											%span Continue
 								.bed__details
 								.container__border{style: "margin-bottom:28px;"}
 			.body__right{style: "background-color:transparent"}

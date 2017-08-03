@@ -9,6 +9,15 @@
 							%br host
 						%p.container__sentence
 							From saving for home repairs to taking a dream trip, hosts use extra income to fund their passions.
-						=form_tag user_hosts_path, method: :post do
-							%button.hosting-button
-								Start Hosting
+						-if current_user.host && @room == nil
+							=link_to user_host_path(user_id: current_user.id, id: current_user.host.id) do
+								%button.hosting-button
+									Start Hosting
+						-elsif current_user.host
+							=link_to "/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/#{@room.id}/room_steps/home",class: "info" do
+								%button.hosting-button
+									Start Hosting
+						-else
+							=form_tag user_hosts_path, method: :post do
+								%button.hosting-button
+									Start Hosting
