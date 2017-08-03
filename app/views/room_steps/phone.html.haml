@@ -10,13 +10,15 @@
 						.counter{style: "width:100px; height:100px; border-color:#c4c4c4;"}
 							.i.fa.fa-mobile{style: "font-size:70px; padding:15px;"}
 						.form__list
-					= form_for @room, url: locations_user_host_rooms_path do |f|
+					= form_for @user, url: wizard_path do |f|
 						.form__phone-wrapper
 							%span.phone__code +81
-							=	f.telephone_field  :image,class: "form__phone";
-					.request__bottom.form_list.form_position
-						.back
-							=link_to "← Back",locations_user_host_rooms_path
-						.next
-							=link_to "Finish", spaces_user_host_rooms_path
+							=	f.telephone_field  :phone_number,class: "form__phone";
+						.request__bottom.form_list.form_position
+							.back
+								=link_to "← Back",previous_wizard_path
+							%div
+								= f.hidden_field :progress,value: 1
+								= f.submit "Finish",class: "next"
 			.body__right
+

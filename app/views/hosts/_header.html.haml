@@ -14,9 +14,12 @@
 				=link_to "Help",root_path,class: "info"
 			%li.info_list
 				=link_to "Messages",root_path,class: "info"
-			-if current_user.host
+			-if current_user.host && @room == nil
 				%li.info_list
 					=link_to "Host","/users/#{current_user.id}/hosts/#{current_user.host.id}",class: "info"
+			-else
+				%li.info_list
+					=link_to "Host","/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/#{@room.id}/room_steps/home",class: "info"
 		-else
 			%li.info_list
 				%div{class: "info",id: "Login"}Log In

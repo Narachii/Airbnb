@@ -9,16 +9,18 @@
 				.request__content{style: "position:relative;"}
 					.image__card
 					%label
-					= form_for @room, url: locations_user_host_rooms_path do |f|
+					= form_for @room, url: wizard_path do |f|
 						= f.label :image do
 							.inside
 								.middle__button-wrapper
 									.middle__button
 										%span.fa.fa-cloud-upload
 										%span Upload Photos
-								=	f.file_field  :image,class: "hidden";
-					.request__bottom{style: "width:100%; margin-top:10px;"}
-						.back
-							=link_to "← Back",locations_user_host_rooms_path
-						.skip
-							=link_to "Skip for now", description_user_host_rooms_path
+								=	f.file_field  :image,class: "hidden"
+						.request__bottom{style: "width:100%; margin-top:10px;"}
+							.back
+								=link_to "← Back", wizard_path(:home)
+							%div
+								=f.submit "continue", class: "next"
+								=link_to "skip", next_wizard_path
+

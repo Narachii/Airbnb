@@ -7,6 +7,7 @@
 		.request__form
 			.request__title How many bathrooms?
 			.request__content
+			= form_for [@room], url: wizard_path do |f|
 				.content__wrapper
 					.content__guest
 						Guests
@@ -32,7 +33,7 @@
 									%span No, it's shared
 				.request__bottom.form_list
 					.back
-						=link_to "← Back", bed_details_user_host_rooms_path
-					.next
-						=link_to "Next", locations_user_host_rooms_path
+						=link_to "← Back", previous_wizard_path
+					%div
+						=link_to "Next",next_wizard_path,class: "next"
 	.body__right

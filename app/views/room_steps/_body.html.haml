@@ -3,7 +3,7 @@
 		.request__form
 			.request__title What kind of place are you listing?
 			.request__content
-			= form_for @room, url: user_host_rooms_path,method: :update do |f|
+			= form_for @room, url: wizard_path  do |f|
 				%div.form__list
 					%span
 					Is this listing a home, hotel, or something else?
@@ -63,7 +63,7 @@
 								%span No, I keep my personal belongings here
 				.request__bottom.form_list
 					.back
-						=link_to "← Back","/users/#{current_user.id}/hosts/#{current_user.host.id}"
-					.next
-						=f.submit	"Next"
+						=link_to "← Back",wizard_path(:home)
+					%div
+						=f.submit "Next",class: "next"
 	.body__right

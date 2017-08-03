@@ -1,5 +1,6 @@
 .rooms{
 	height:64px;
+	width: 100%;
 	position: relative;
 	padding:0;
 	box-shadow: none;
@@ -33,7 +34,7 @@
 }
 
 .bottom__block{
-	width: 12.27%;
+	width: 12.25%;
 	float:left;
 	padding:12px 14px;
 	font-size: 14px;
@@ -47,7 +48,7 @@
 }
 
 .progress-bar{
-	width:12.34%;
+	width:12.32%;
 	background-color: #00a699;
   border-right-color: #00a699;
   height: 5px;

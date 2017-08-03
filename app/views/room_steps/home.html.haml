@@ -1,6 +1,6 @@
 .main
 	%header
-		= render "header"
+		= render "hosts/header"
 	.body{style: "overflow: auto;"}
 		.body__main2{style: "width:1310px; margin:0 auto; "}
 			.body__left{style: "padding-left:0;"}
@@ -16,24 +16,30 @@
 								%span STEP 1
 								%h3{style: "font-size:24px;"} Start with the basics
 								%div Beds, bathrooms, amenities, and more
-								-if @room == nil
+								-if @room.spaces.present?
+									.container__left{style: "float:left; font-size: 14px; color: #00a699;"}
+										=link_to " Change", wizard_path(:room),class: "change"
+								-else
 									.container__left{style: "float:left; font-size: 19px;"}
 										=form_tag user_host_rooms_path(user_id: current_user.id, host_id: params[:id]), method: :post do
 											%button.continue
 												%span Continue
-								-else
-									.container__left{style: "float:left; font-size: 19px;"}
-										=link_to user_host_room_room_steps_path(user_id: current_user.id, host_id: params[:id],room_id: @room.id) do
-											%button.continue
-												%span Continue
-								.bed__details
-								.container__border{style: "margin-bottom:28px;"}
+							.bed__details
+							.container__border{style: "margin-bottom:28px;"}
 						%div
 							.panel__title
 								%span STEP 2
 								%h3{style: "font-size:24px;"} Set the scene
 								%div Photos, short description, title
-								.container__left{style: "float:left; font-size: 19px;"}
+								-if @room.image.present?
+									.container__left{style: "float:left; font-size: 14px; color: #00a699;"}
+										=link_to " Change", wizard_path(:image),class: "change"
+								-else
+									- if @room.spaces.present?
+										.container__left{style: "float:left; font-size: 19px;"}
+											= link_to wizard_path(:image) do
+												.continue
+													%span Continue
 								.bed__details
 								.container__border{style: "margin-bottom:28px;"}
 						%div
@@ -41,7 +47,11 @@
 								%span STEP 3
 								%h3{style: "font-size:24px;"} Get ready for guests
 								%div Booking settings, calendar, price
-								.container__left{style: "float:left; font-size: 19px;"}
+								-if @room.image.present?
+									.container__left{style: "float:left; font-size: 19px;"}
+										= link_to "/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/room",method: :get do
+											.continue
+												%span Continue
 								.bed__details
 								.container__border{style: "margin-bottom:28px;"}
 			.body__right{style: "background-color:transparent"}
@@ -51,6 +61,4 @@
 			.content__main
 				%footer
 					= render "users/footer"
-
-
 

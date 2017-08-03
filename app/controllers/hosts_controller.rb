@@ -1,9 +1,11 @@
 class HostsController < ApplicationController
 
 	def index
+		@room = current_user.host.rooms.find_by(progress: false)
 	end
 
 	def show
+			@room = current_user.host.rooms.find_by(progress: false)
 	end
 
 	def create
