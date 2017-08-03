@@ -1,0 +1,25 @@
+.main
+	%header
+		= render "header2"
+	.body
+		.body__rooms
+			.body__left
+				.request__form{style: "overflow:scroll;"}
+					.request__title Add your photo
+					.request__content{style: "float:left;"}
+						.i.fa.fa-user-circle-o{style: "font-size:144px;"}
+					.form__list
+					= form_for @user, url: wizard_path do |f|
+						= f.label :image do
+							.image__button
+								%span.fa.fa-cloud-upload
+								%span Upload Photos
+						=	f.file_field  :image,class: "hidden";
+						.request__bottom.form_list.form_position
+							.back
+								=link_to "← Back",previous_wizard_path
+							%div
+								=f.submit "Next", class: "next"
+								=link_to "skip", next_wizard_path
+			.body__right
+

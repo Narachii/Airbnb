@@ -1,0 +1,69 @@
+.body__rooms
+	.body__left
+		.request__form
+			.request__title What kind of place are you listing?
+			.request__content
+			= form_for @room, url: wizard_path  do |f|
+				%div.form__list
+					%span
+					Is this listing a home, hotel, or something else?
+					.s-wrapper
+						= f.select :place_type, options_for_select({Home: "home", Hotel: "Hotel", Something_else: "Other"})
+				%div.form__list{style: "margin:32px 0;"}
+					%span
+					What type of property is this?
+					.s-wrapper
+						= f.select :property_type, options_for_select({Select_one: "",
+						 Apartment: "Apartment",
+						 Condominium: "Condominium",
+						 Guesthouse: "Guesthouse",
+						 House: "House",
+						 Guest_suite: "Guest suite",
+						 Townhouse: "Townhouse",
+						 Vacation_home: "Vacation home",
+						 ──────────────: "-1",
+						 Boat: "Boat",
+						 Bungalow: "Bungalow",
+						 Cabin: "Cabin",
+						 Castle: "Castle",
+						 Cave: "Cave",
+						 Chalet: "Chalet",
+						 Dorm: "Dorm",
+						 Earth_House: "Earth House",
+						 Hut: "Hut",
+						 Igloo: "Igloo",
+						 Island: "Island",
+						 Lighthouse: "Lighthouse",
+						 Loft: "Loft",
+						 Plane: "Plane",
+						 Camper_or_RV: "Camper/RV",
+						 Tent: "Tent",
+						 Tipi: "Tipi",
+						 Train: "Train",
+						 Treehouse: "Treehouse",
+						 Villa: "Villa",
+						 Yurt: "Yurt",
+						 Other: "Other"},disabled: ["-1",""])
+				%div.form__list{style: "margin:32px 0;"}
+					%span
+					What will guests have?
+					.s-wrapper
+						=f.select :room_type, options_for_select({Entire_place: "Entire place",Private_room: "Private room",shared: "shared"})
+				%div.form__list{style: "margin:32px 0;"}
+					%fieldset
+						%legend
+							%div Is this set up as a dedicated guest space?
+						%div{style: "margin:16px 0;"}
+							%label
+								%input{type: "radio" ,name: "personalBelonging" ,value: "keep_personal_belonging_here"}
+								%span Yes, it’s primarily set up for guests
+						%div
+							%label
+								%input{type: "radio" ,name: "personalBelonging" ,value: "keep_personal_belonging_here"}
+								%span No, I keep my personal belongings here
+				.request__bottom.form_list
+					.back
+						=link_to "← Back",wizard_path(:home)
+					%div
+						=f.submit "Next",class: "next"
+	.body__right

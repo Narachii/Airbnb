@@ -1,0 +1,39 @@
+.main
+	%header
+		= render "header"
+	.body
+		.body__rooms
+	.body__left
+		.request__form
+			.request__title How many bathrooms?
+			.request__content
+			= form_for [@room], url: wizard_path do |f|
+				.content__wrapper
+					.content__guest
+						Guests
+					.button__wrapper
+						%button.counter
+							%span.counter__text +
+					.counter__count
+						2
+					.button__wrapper{style: "float:center;"}
+						%button.counter
+							%span.counter__text{style: "font-size: 25px; line-height:15px; font-weight:100;"} -
+					%div.form__list{style: "margin:32px 0; float:left;"}
+						%fieldset{style: "font-size:17px;"}
+							%legend
+								%div Is the bath room private?
+							%div{style: "margin:16px 0;"}
+								%label
+									%input{type: "radio" ,name: "personalBelonging" ,value: "keep_personal_belonging_here"}
+									%span Yes
+							%div
+								%label
+									%input{type: "radio" ,name: "personalBelonging" ,value: "keep_personal_belonging_here"}
+									%span No, it's shared
+				.request__bottom.form_list
+					.back
+						=link_to "← Back", previous_wizard_path
+					%div
+						=link_to "Next",next_wizard_path,class: "next"
+	.body__right

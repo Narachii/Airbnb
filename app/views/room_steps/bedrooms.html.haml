@@ -1,0 +1,55 @@
+.main
+	%header
+		= render "header"
+	.body
+		.body__rooms
+			.body__left
+				.request__form
+					.request__title How many guests can your place accommodate?
+					.request__content
+					= form_for @room, url: wizard_path  do |f|
+						.content__wrapper
+							.content__guest
+								Guests
+							.button__wrapper
+								%button.counter
+									%span.counter__text +
+							.counter__count
+								2
+							.button__wrapper{style: "float:center;"}
+								%button.counter
+									%span.counter__text{style: "font-size: 25px; line-height:15px; font-weight:100;"} -
+						%div.form__list{style: "margin:32px 0; clear:both;"}
+							%span
+							How many bedrooms can guests use?
+							.s-wrapper
+								= f.select :bedroom, options_for_select({Select_one: "",
+									Studio: "0",
+									bedroom: "1",
+									Two_bedrooms: "2",
+									Three_bedrooms: "3",
+									Four_bedrooms: "4",
+									Five_bedrooms: "5",
+									Six_bedrooms: "6",
+									Seven_bedrooms: "7",
+									Eight_bedrooms: "8",
+									Nine_bedrooms: "9",
+									Ten_bedrooms: "10" },disabled: "")
+						.content__wrapper
+							.form__list How many beds can guest use?
+							.content__guest
+								Beds
+							.button__wrapper
+								%button.counter
+									%span.counter__text +
+							.counter__count
+								2
+							.button__wrapper{style: "float:center;"}
+								%button.counter
+									%span.counter__text{style: "font-size: 25px; line-height:15px; font-weight:100;"} -
+						.request__bottom.form_list
+							.back
+								=link_to "← Back",previous_wizard_path
+							%div
+								=f.submit "Next",class: "next"
+			.body__right

@@ -1,0 +1,23 @@
+.main
+	%header
+		= render "header"
+	.body
+		.body__rooms
+			.body__left
+				.request__form{style: "overflow:scroll;"}
+					.request__title What amenities do you offer??
+					.request__content
+						%div.form__list
+						= form_for [@room], url: wizard_path do |f|
+							= collection_check_boxes(:room, :amenity_ids, Amenity.all, :id, :name) do |b|
+								.check_box__wrapper
+									%label.check_box
+										.field.check{style: "margin-top:5px; float:left;"}
+											%div{style: "padding-left:8px; float:left;"}
+											= b.label {b.check_box + b.text}
+							.request__bottom.form_list.form_position
+								.back
+									=link_to "← Back",previous_wizard_path
+								%div
+									=f.submit "Next",class: "next"
+			.body__right
