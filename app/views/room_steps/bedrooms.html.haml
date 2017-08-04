@@ -7,18 +7,18 @@
 				.request__form
 					.request__title How many guests can your place accommodate?
 					.request__content
-					= form_for @room, url: wizard_path  do |f|
 						.content__wrapper
 							.content__guest
 								Guests
 							.button__wrapper
-								%button.counter
+								%button.counter#plus
 									%span.counter__text +
-							.counter__count
-								2
+							.counter__count#counter
+								0
 							.button__wrapper{style: "float:center;"}
-								%button.counter
+								%button.counter#minus
 									%span.counter__text{style: "font-size: 25px; line-height:15px; font-weight:100;"} -
+					= form_for @room, url: wizard_path  do |f|
 						%div.form__list{style: "margin:32px 0; clear:both;"}
 							%span
 							How many bedrooms can guests use?
@@ -39,17 +39,19 @@
 							.form__list How many beds can guest use?
 							.content__guest
 								Beds
-							.button__wrapper
-								%button.counter
+							%f.label.button__wrapper
+								.counter#plus-bed
 									%span.counter__text +
-							.counter__count
-								2
+							.counter__count#counter-bed
+								0
 							.button__wrapper{style: "float:center;"}
-								%button.counter
-									%span.counter__text{style: "font-size: 25px; line-height:15px; font-weight:100;"} -
+								.counter#minus-bed
+									%span.counter__text{style: "font-size: 25px; line-height:15px; font-weight:200;"} -
 						.request__bottom.form_list
 							.back
 								=link_to "← Back",previous_wizard_path
 							%div
+								=f.hidden_field :guest_number, value: 0, id: "hidden"
+								=f.hidden_field :bed, value: 0, id: "hidden-bed"
 								=f.submit "Next",class: "next"
 			.body__right

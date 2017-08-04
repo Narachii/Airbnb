@@ -272,7 +272,7 @@
 								= f.text_field :optional,placeholder: "ex. 101 room",class: "form"
 						.request__bottom.form_list
 							.back
-								=link_to "← Back", previous_wizard_path
+								=link_to "← Back", previous_wizard_path, mehotd: :get
 							%div
-								=link_to "Next",next_wizard_path,class: "next"
+								=f.submit "Next",class: "next"
 	.body__right

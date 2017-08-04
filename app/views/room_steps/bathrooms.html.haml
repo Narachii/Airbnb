@@ -7,18 +7,17 @@
 		.request__form
 			.request__title How many bathrooms?
 			.request__content
-			= form_for [@room], url: wizard_path do |f|
 				.content__wrapper
 					.content__guest
-						Guests
+						Bath room
 					.button__wrapper
-						%button.counter
+						%button.counter#plus
 							%span.counter__text +
-					.counter__count
-						2
+					.counter__count#counter
+						0
 					.button__wrapper{style: "float:center;"}
 						%button.counter
-							%span.counter__text{style: "font-size: 25px; line-height:15px; font-weight:100;"} -
+							%span.counter__text#minus{style: "font-size: 25px; line-height:15px; font-weight:100;"} -
 					%div.form__list{style: "margin:32px 0; float:left;"}
 						%fieldset{style: "font-size:17px;"}
 							%legend
@@ -31,9 +30,12 @@
 								%label
 									%input{type: "radio" ,name: "personalBelonging" ,value: "keep_personal_belonging_here"}
 									%span No, it's shared
-				.request__bottom.form_list
-					.back
-						=link_to "← Back", previous_wizard_path
-					%div
-						=link_to "Next",next_wizard_path,class: "next"
+				= form_for [@room], url: wizard_path do |f|
+					.request__bottom.form_list
+						.back
+							=link_to "← Back", previous_wizard_path
+						%div
+							=f.hidden_field :bathroom,value: 0, id: "hidden"
+							=f.submit "Next", class: "next"
 	.body__right
+
