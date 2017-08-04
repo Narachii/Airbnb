@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170803022026) do
+ActiveRecord::Schema.define(version: 20170804021443) do
 
   create_table "amenities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20170803022026) do
 
   create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "host_id",                                      null: false
-    t.string   "name",                                         null: false
+    t.string   "name"
     t.text     "description",    limit: 65535
     t.text     "image",          limit: 65535
     t.string   "place_type"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20170803022026) do
     t.string   "email",                                default: "",    null: false
     t.string   "encrypted_password",                   default: "",    null: false
     t.string   "gender"
-    t.integer  "phone_number"
+    t.bigint   "phone_number"
     t.string   "language"
     t.string   "currency"
     t.text     "location",               limit: 65535

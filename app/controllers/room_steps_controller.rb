@@ -43,7 +43,7 @@ class RoomStepsController < ApplicationController
 	private
 
 	def room_params
-		params.require(:room).permit(:place_type,:property_type,:room_type,:bedroom,:country,:zipcode,:state,:city,:street_address,:optional,:image,:name, :description,:progress,amenity_ids:[],space_ids:[])
+		params.require(:room).permit(:place_type,:property_type,:room_type,:guest_number,:bed,:bedroom,:bathroom,:country,:zipcode,:state,:city,:street_address,:optional,:image,:name, :description,:progress,amenity_ids:[],space_ids:[])
 	end
 
 	def user_params

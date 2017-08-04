@@ -4,11 +4,11 @@ class RoomsController < ApplicationController
 	end
 
 	def room
-		@room = Room.new(name: "a",host_id: "current_user.host.id")
+		@room = Room.new(host_id: current_user.host.id)
 	end
 
 	def create
-		@room = Room.new(name: "a",host_id: current_user.host.id)
+		@room = Room.new(host_id: current_user.host.id)
 		@room.save
 		@user = current_user
 		@user.update(progress: 1)

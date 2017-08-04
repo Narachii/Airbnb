@@ -11,11 +11,11 @@
 	.bottom__block{style: "border-left: none"}
 		=link_to "Place type", wizard_path(:room)
 	.bottom__block
-		=link_to "Bedrooms", wizard_path(:bedrooms)
+		=link_to "Bedrooms", wizard_path(:bedrooms),method: :get
 	.bottom__block
 		=link_to "Sleeping arrangements",wizard_path(:bed_details)
 	.bottom__block
-		=link_to "Bath", wizard_path(:bathrooms)
+		=link_to "Bath", wizard_path(:bathrooms),method: :get
 	.bottom__block
 		=link_to "Location", wizard_path(:locations)
 	.bottom__block
