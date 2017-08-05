@@ -1,12 +1,12 @@
 .head-content.rooms
 	.icon{style: "font-size:10px; height:64px;"}
-		=link_to image_tag("logo4.png", class: "logo"),root_path
+		=link_to image_tag("logo4.png", class: "logo"),root_path,method: :get
 	.step__bar
 		.step__text
 			%span Step 1:
 			%span Start with the basics
 	.step__bar-right
-		=link_to "Save and Exit",root_path
+		=link_to "Save and Exit",wizard_path(:room)
 .head-content__bottom
 	.bottom__block{style: "border-left: none"}
 		=link_to "Place type", wizard_path(:room)

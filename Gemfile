@@ -35,7 +35,7 @@ gem 'haml-rails'
 gem 'devise'
 gem "font-awesome-rails"
 gem 'carrierwave'
-gem 'rmagick'
+gem 'rmagick', require: 'RMagick'
 gem 'wicked'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

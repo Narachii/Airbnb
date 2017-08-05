@@ -1,0 +1,191 @@
+.main
+  %header
+    = render "hosts/header"
+    %div{style: "border-top: 1px solid #DBDBDB;"}
+    .header__pic
+      =image_tag @room.image_url,class: "show__pic"
+  .body{style: "overflow: auto;"}
+    .body__content
+      .body__wrapper
+        .nav__wrapper
+          .nav
+            %span Overview
+            %span ・
+            %span Reviews
+            %span ・
+            %span The Host
+            %span ・
+            %span Location
+        .body__description
+          .description__container
+            .description__title
+              = @room.name
+            .description__address
+              = @room.state
+              %span,
+              = @room.city
+              %span,
+              = @room.country
+              %span.stars.rating{style: "margin-left:24px;" } ☆☆☆☆☆
+              %span.rating 47reviews
+            .description__icons
+              .icons__border
+                .icons__item
+                  .item__content
+                    %i.fa.fa-home{style: "padding-left:20px;"}
+                    .icons__text
+                      = @room.room_type
+                .icons__item
+                  .item__content
+                    %i.fa.fa-users{style: "padding-left:20px;"}
+                    .icons__text
+                      = @room.guest_number
+                      %span guests
+                .icons__item
+                  .item__content
+                    %i.fa.fa-home{style: "padding-left:20px;"}
+                    .icons__text
+                      = @room.bedroom
+                      %span bedroom
+                .icons__item
+                  .item__content
+                    %i.fa.fa-bed{style: "padding-left:20px;"}
+                    .icons__text
+                      = @room.bed
+                      %span bed
+              .icons__border{style: "clear:both;"}
+            .description__details
+              .text{style: "font-size:22px; margin-bottom:28px;"}
+                About this listing
+              .details__text
+                Very clean and spacious condo.
+                100% walk score. Close to Union Station, Air Canada Centre, Rogers Centre, CN Tower, Aquarium, St Lawrence market, King Station
+              .text{style: "font-size:19px; margin-bottom:16px;"}
+                The space
+              .details__text
+                Very clean two bedroom two bathroom condo. Very spacious and bright.
+                %br
+                Includes: ensuite full-size washer/dryer, dishwasher, granite countertops, high-end kitchenware, Bell Fibe unlimited high speed internet and great cable package, top-of-the-line all new big screen tv and speakers. The unit is 1000 sq ft. and fully furnished.
+                %br
+                Bedroom: comfy queen size bed with a full double closet, nightstand, lamps, dresser, and private office area if required.
+                %br
+                Building Features: expansive rooftop terrace, complete with sun loungers, cushions, and barbeques for use, as well as a 24-hr concierge, meeting room, party room, and gym.
+                %br
+                Although the space is right in the centre of the downtown core, you dont hear much street noise inside the condo and I assure that you will have a very peaceful sleep.
+              .text{style: "font-size:19px; margin-bottom:16px;"}
+                Guest access
+              .details__text
+                Guests will have access to all of the common elements and may come and go as they please.
+              .text{style: "font-size:19px; margin-bottom:16px;"}
+                Interaction with guests
+              .details__text
+                You will be sharing the space with myself. I am a very easy going 29 year old Canadian guy working full time at TD bank. You will receive a key/fob that acesses all of the buildings amenities and may come and go as you please.
+                I have been hosting people from all over the world for over a year. As an Air B n B host, my job is to ensure my guests have a comfortable stay. Please do not be shy to ask me specific questions prior to booking, either about the space or the city.
+              .text__link
+                = link_to "Ask host a question" ,root_path
+              .icons__border
+            .description__facilities
+              .facilities__left
+                .text{style: "font-size:19px; margin-bottom:16px;"}
+                  The space
+              .facilities__right
+                .left__box
+                  .text.facility
+                    Accomodates:
+                    =@room.guest_number
+                  .text.facility
+                    Bathrooms:
+                    =@room.bathroom
+                  .text.facility
+                    Bedrooms:
+                    =@room.bedroom
+                  .text.facility
+                    Beds:
+                    =@room.bed
+                .right__box
+                  .text.facility
+                    Check In:Flexible
+                  .text.facility
+                    Property type:
+                    =@room.property_type
+                  .text.facility
+                    Room type:
+                    =@room.room_type
+                .icons__border{style: "clear:both;"}
+              .description__facilities
+                .facilities__left
+                  .text{style: "font-size:19px; margin-bottom:16px;"}
+                    Amenities
+                .facilities__right
+                  .left__box
+                    -@room.amenities.each do |amenity|
+                      .text.facility
+                        %i.fa.fa-check
+                        =amenity.name
+                  .right__box
+                    -@room.spaces.each do |space|
+                      .text.facility
+                        %i.fa.fa-check
+                        =space.item
+                  .icons__border{style: "clear:both;"}
+              .description__facilities
+                .facilities__left
+                  .text{style: "font-size:19px; margin-bottom:16px;"}
+                    Availability
+                .facilities__right
+                  .left__box
+                    .text.facility
+                      1 night minimum stay
+                  .right__box
+                    .text.facility#calender_text
+                      view calender
+                .icons__border{style: "clear:both;"}
+              .description__host
+                %div{style: "margin-bottom:28px;"}
+                  %span.text{style: "font-size:20px;"}
+                    Hosted by
+                    = @room.host.user.first_name
+                    = image_tag @room.host.user.image_url,class: "avatar"
+              .details__text{style: "clear:both;"}
+                My name is
+                = @room.host.user.first_name
+                %br
+                %br
+                I grew up in Ottawa. I am a huge hockey fan and the Ottawa Senators are my favorite team.
+                %br
+                %br
+                I have lots of experience traveling, having lived and taught in South Korea for two years. I am easy going, and really enjoy meeting new people from all over the world.
+                %br
+                %br
+                I take pride in knowing I have consistently been providing comfortable experiences for over 250 guests from all over the world.
+      .body__bottom{style: "margin-top:40px;"}
+        .description__location
+          .text{style: "font-size:19px; margin-bottom:16px;"}
+            The neighborhood
+          .details__text
+            = @host.first_name + "'s"
+            home is located in
+            = @room.state + ","
+            = @room.city + ","
+            = @room.country
+            %br
+            %br
+            Perfect location. So many terrific restaurants, bars and speciality stores that appeal to tourists
+            %br
+            %br
+            100% walk score. Close to eaton centre, air canada centre, rogers centre CN tower, aquarium, St Lawrence market and toronto's entertainment district.
+          .details__map
+        .description__recomend
+          .text{style: "font-size:19px; margin:16px 0;"}
+            Similar listings
+          .slider-homes#slider3{style: "width:100%;"}
+            - @rooms.each do |room|
+              .homes-content
+                .homes-images
+                  =link_to room_path(id: room.id),method: :get,class: "h-image" do
+                    .pic#x1
+                      =image_tag room.image_url,class: "home-image"
+      .content
+        .content__main
+          %footer
+            = render "users/footer"

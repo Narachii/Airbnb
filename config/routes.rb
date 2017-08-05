@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :rooms ,only: :show
   resources :users do
 	  resources :hosts do
 	  	resources :rooms do
 		  	resources :room_steps
-	  		collection do
-		  		get 'room','bedrooms','bed_details','bathrooms','locations','amenities','spaces','image','description','title','phone','profile_photo'
-	  		end
 	  	end
 	  end
 	end

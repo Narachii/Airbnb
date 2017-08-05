@@ -21,3 +21,5 @@ config/secrets.yml
 public/uploads/room/image/16/Profile.png
 
 public/uploads/user/image/10/Profile.png
+
+/public/uploads
