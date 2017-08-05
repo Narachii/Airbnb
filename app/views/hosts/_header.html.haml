@@ -1,6 +1,6 @@
-.head-content.hosts
+.head-content.hosts{style: "padding:0;"}
 	.icon{style: "width:100px;"}
-		=link_to image_tag("logo2.jpg", class: "logo"),root_path
+		=link_to image_tag("logo2.jpg", class: "logo"),root_path,method: :get
 	.search-bar
 		%form.search{action: "users/search"}
 			.search-bar__container
