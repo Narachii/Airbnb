@@ -37,6 +37,7 @@ gem "font-awesome-rails"
 gem 'carrierwave'
 gem 'rmagick', require: 'RMagick'
 gem 'wicked'
+gem "fog"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
