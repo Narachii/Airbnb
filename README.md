@@ -89,6 +89,12 @@
 |image|text|null false|
 |price|integer|null false|
 |availability|integer|-|
+|accomodate|integer|null false|
+|bathrooms|integer|null false|
+|Bed rooms|integer|null false|
+|Beds     |integer|null false|
+|property-type|string|null false|
+|cleaning-fee|integer|-|
 |location|text|null false|
 |latitude |float |-|
 |longitude|float|-|

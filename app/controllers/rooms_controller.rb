@@ -15,6 +15,12 @@ class RoomsController < ApplicationController
 		redirect_to user_host_room_room_steps_path(room_id: @room.id)
 	end
 
+	def show
+		@rooms = Room.all
+		@room = Room.find(params[:id])
+		@host = @room.host.user
+	end
+
 	# def bathrooms
 	# end
 
