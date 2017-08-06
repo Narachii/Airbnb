@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 
 	def index
 		@rooms = Room.all
-		@room = Room.find(34)
 	end
 
 	# private
