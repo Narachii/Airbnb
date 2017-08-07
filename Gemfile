@@ -38,6 +38,8 @@ gem 'carrierwave'
 gem 'rmagick', require: 'RMagick'
 gem 'wicked'
 gem "fog"
+gem "geocoder"
+gem "gmaps4rails"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
