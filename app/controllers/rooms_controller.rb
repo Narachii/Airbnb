@@ -19,6 +19,10 @@ class RoomsController < ApplicationController
 		@rooms = Room.all
 		@room = Room.find(params[:id])
 		@host = @room.host.user
+		@hash = Gmaps4rails.build_markers(@room) do |room,marker|
+  		marker.lat room.lattitude
+  		marker.lng room.longitude
+		end
 	end
 
 	# def bathrooms
