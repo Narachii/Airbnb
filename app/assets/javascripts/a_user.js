@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load',function() {
+$(document).ready(function() {
 	$("#signUp").on('click',function(){
   $(this).blur();
   if($("#model-overlay")[0]) return false;
