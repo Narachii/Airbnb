@@ -1,16 +1,20 @@
 class HostsController < ApplicationController
 
 	def index
-		@room = current_user.host.rooms.find_by(progress: false)
+		if current_user.host.present?
+			@room = current_user.host.rooms.find_by(progress: false)
+		end
 	end
 
 	def show
-			@room = current_user.host.rooms.find_by(progress: false)
+			if current_user.host.present?
+				@room = current_user.host.rooms.find_by(progress: false)
+			end
 	end
 
 	def create
 		host = Host.create(create_params)
-		redirect_to controller: 'rooms', action: 'index'
+		redirect_to user_host_path(id: current_user.host.id)
 	end
 
 	def create_params

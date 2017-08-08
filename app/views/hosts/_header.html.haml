@@ -17,7 +17,7 @@
 			-if current_user.host && @room == nil
 				%li.info_list
 					=link_to "Host","/users/#{current_user.id}/hosts/#{current_user.host.id}",class: "info"
-			-else
+			-elsif current_user.host
 				%li.info_list
 					=link_to "Host","/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/#{@room.id}/room_steps/home",class: "info"
 		-else

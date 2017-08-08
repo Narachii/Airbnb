@@ -1,3 +1,6 @@
+%script{:src => "//maps.google.com/maps/api/js?key=AIzaSyDApvpqeb8HdQvnBvaxpbOcjHkEYmTf6N8"}
+%script{:src => "//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"}
+%script{:src => "//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js", :type => "text/javascript"}
 .main
   %header
     = render "hosts/header"
@@ -174,7 +177,14 @@
             %br
             %br
             100% walk score. Close to eaton centre, air canada centre, rogers centre CN tower, aquarium, St Lawrence market and toronto's entertainment district.
-          .details__map
+          .details__map#map
+          :javascript
+            handler = Gmaps.build('Google');
+            handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+              markers = handler.addMarkers(#{raw @hash.to_json});
+              handler.bounds.extendWith(markers);
+              handler.fitMapToBounds();
+            });
         .description__recomend
           .text{style: "font-size:19px; margin:16px 0;"}
             Similar listings
@@ -185,6 +195,20 @@
                   =link_to room_path(id: room.id),method: :get,class: "h-image" do
                     .pic#x1
                       =image_tag room.image_url,class: "home-image"
+                .text
+                  %div
+                    %span.price¥13,088
+                    %span.homes-topic #{room.description.truncate(35, omission: '...')}
+                  .detail
+                    %span #{room.room_type} #{room.place_type}/#{room.property_type}
+                    %span ・
+                    -if room.bed == 1
+                      %span #{room.bed} bed
+                    -else
+                      %span #{room.bed} beds
+                .rating
+                  %span.stars ☆☆☆☆☆
+                  %span 47reviews
       .content
         .content__main
           %footer
