@@ -9,16 +9,15 @@
 
 .body{
 	&__content{
-	padding:0 24px;
+	padding:0 48px;
 	margin:0 auto;
 	}
 
 	&__wrapper{
-		width:60%;
+		width:65%;
 		margin:0 auto;
-
+		padding-right:20%;
 	}
-
 
 	&__description{
 		width:100%;
@@ -83,6 +82,7 @@
 		background-color: gray;
 		margin-top: 20px;
 		margin-bottom: 32px;
+		padding-left: 20%;
 	}
 }
 
@@ -150,4 +150,84 @@
 .body__bottom{
 	width:60%;
 	margin:0 auto;
+}
+
+
+
+.side-content{
+		width:315px;
+		height:348px;
+		margin-right: 2%;
+		float:right;
+    z-index: 1;
+    &__header{
+    	height:50px;
+    	width:315px;
+    	background-color:#3c3f40;
+    	// background-color: rgba(60,63,64,0.9);
+    }
+    &__body{
+    	    border: 1px solid #dce0e0;
+    }
+    &__wrapper{
+    	padding:20px;
+    }
+	}
+
+.side-header{
+	&__text{
+		padding:13px 20px 5px 13px ;
+		font-size:19px;
+		color: #fff;
+	}
+	&__detail{
+  margin-right: 6px;
+   }
+}
+
+.data{
+	&__content{
+		width:100%;
+	}
+	&__wrapper{
+		float:left;
+		width:50%;
+	}
+	&__text{
+		font-size: 15px;
+		padding-bottom: 8px;
+	}
+	&__form{
+		width:80%;
+		font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 12px;
+    color: #484848;
+    font-weight: 300;
+	}
+}
+
+
+.guest{
+	&__content{
+		width:100%;
+		float:left;
+				margin-top: 8px;
+	}
+	&__form{
+		width: 90%;
+		font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 12px;
+    color: #484848;
+    font-weight: 300;
+	}
+}
+
+.side{
+	margin: 18px 0;
+	width:100%;
+	padding: 9px 25px;
 }
