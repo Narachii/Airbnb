@@ -419,6 +419,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   erb2haml
+  execjs
   fog
   font-awesome-rails
   geocoder
