@@ -26,3 +26,4 @@ public/uploads/user/image/10/Profile.png
 config/secrets.yml
 
 config/secrets.yml
+app/.env

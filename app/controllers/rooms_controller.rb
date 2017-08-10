@@ -22,6 +22,7 @@ class RoomsController < ApplicationController
 		@hash = Gmaps4rails.build_markers(@room) do |room,marker|
   		marker.lat room.lattitude
   		marker.lng room.longitude
+  	@reservation = Reservation.new
 		end
 	end
 

@@ -40,6 +40,9 @@ gem 'wicked'
 gem "fog"
 gem "geocoder"
 gem "gmaps4rails"
+gem 'bootstrap3-datetimepicker-rails'
+gem 'momentjs-rails'
+gem 'dotenv-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

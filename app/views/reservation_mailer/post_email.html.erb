@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1>Confirmation of your reservation request at <%= @title %> </h1>
+    <p>
+    	Thank you very much for your reservation request.
+      Your reservation request is as follows.<br />
+      Date of Check In:<%= @check_in%>
+			Date of Check Out:<%= @check_out%>
+			<br>
+			The host "<%= @host_name %>" will check your request and get back to you soon.
+			We hope you have a nice trip!!
+    </p>
+  </body>
+</html>

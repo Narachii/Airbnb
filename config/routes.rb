@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'users#index'
-  resources :rooms ,only: :show
+  resources :rooms ,only: :show do
+  	  resources :reservations, only: :create
+  	end
   resources :users do
 	  resources :hosts do
 	  	resources :rooms do

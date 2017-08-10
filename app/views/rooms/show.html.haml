@@ -9,6 +9,40 @@
       =image_tag @room.image_url,class: "show__pic"
   .body{style: "overflow: auto;"}
     .body__content
+      .side-content
+        .side-content__header
+          .side-header__text
+            %span.side-header__detail
+              From
+            %span.side-header__detail
+              ¥ 9,013
+            %span.side-header__detail
+              per night
+        .side-content__body
+          = form_for @reservation, url:  room_reservations_path(room_id: params[:id]) do |f|
+            .side-content__wrapper
+              .data__content
+                .data__wrapper
+                  %label
+                    .data__text
+                      Check_in
+                    %div{style: "position:relative;"}
+                      = f.text_field :data_in , placeholder: "mm/dd/yy" ,class: "form-control data__form",id: "datetimepicker"
+                .data__wrapper
+                  %label
+                    .data__text
+                      Check_out
+                    %div{style: "position:relative;"}
+                      = f.text_field :date_out ,placeholder: "mm/dd/yy" ,class: "form-control data__form",id: "datetimepicker2"
+                .guest__content
+                  .guest__wrapper
+                    .data__text
+                      Guests
+                    = f.text_field :guest,class:"guest__form"
+                %div
+                  = f.submit "Request to Book",{class: "next_form  side"}
+                %div{style: "text-align:center; clear:both;"}
+                  You won't be charged yet
       .body__wrapper
         .nav__wrapper
           .nav
@@ -161,7 +195,7 @@
                 %br
                 %br
                 I take pride in knowing I have consistently been providing comfortable experiences for over 250 guests from all over the world.
-      .body__bottom{style: "margin-top:40px;"}
+      .body__bottom{style: "margin-top:40px; padding-right:20%;"}
         .description__location
           .text{style: "font-size:19px; margin-bottom:16px;"}
             The neighborhood
@@ -185,30 +219,30 @@
               handler.bounds.extendWith(markers);
               handler.fitMapToBounds();
             });
-        .description__recomend
-          .text{style: "font-size:19px; margin:16px 0;"}
-            Similar listings
-          .slider-homes#slider3{style: "width:100%;"}
-            - @rooms.each do |room|
-              .homes-content
-                .homes-images
-                  =link_to room_path(id: room.id),method: :get,class: "h-image" do
-                    .pic#x1
-                      =image_tag room.image_url,class: "home-image"
-                .text
-                  %div
-                    %span.price¥13,088
-                    %span.homes-topic #{room.description.truncate(35, omission: '...')}
-                  .detail
-                    %span #{room.room_type} #{room.place_type}/#{room.property_type}
-                    %span ・
-                    -if room.bed == 1
-                      %span #{room.bed} bed
-                    -else
-                      %span #{room.bed} beds
-                .rating
-                  %span.stars ☆☆☆☆☆
-                  %span 47reviews
+          .description__recomend
+            .text{style: "font-size:19px; margin:16px 0;"}
+              Similar listings
+            .slider-homes#slider3{style: "width:120%;"}
+              - @rooms.each do |room|
+                .homes-content
+                  .homes-images
+                    =link_to room_path(id: room.id),method: :get,class: "h-image" do
+                      .pic#x1
+                        =image_tag room.image_url,class: "home-image"
+                  .text
+                    %div
+                      %span.price¥13,088
+                      %span.homes-topic #{room.description.truncate(35, omission: '...')}
+                    .detail
+                      %span #{room.room_type} #{room.place_type}/#{room.property_type}
+                      %span ・
+                      -if room.bed == 1
+                        %span #{room.bed} bed
+                      -else
+                        %span #{room.bed} beds
+                  .rating
+                    %span.stars ☆☆☆☆☆
+                    %span 47reviews
       .content
         .content__main
           %footer
