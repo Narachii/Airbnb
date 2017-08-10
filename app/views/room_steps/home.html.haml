@@ -49,7 +49,7 @@
 								%div Booking settings, calendar, price
 								-if @room.image.present?
 									.container__left{style: "float:left; font-size: 19px;"}
-										= link_to "/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/room",method: :get do
+										= link_to wizard_path(:test),method: :get do
 											.continue
 												%span Continue
 								.bed__details
