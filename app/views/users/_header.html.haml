@@ -7,8 +7,12 @@
 	.head-content__info
 		%ul
 			-if user_signed_in?
-				%li.info_list
-					.i.fa.fa-user-circle-o#user_icon{style: "font-size:30px;"}
+				%label#user_icon
+					%li.info_list#icon_tab
+						-if current_user.image == nil
+							.i.fa.fa-user-circle-o{style: "font-size:30px;"}
+						-else
+							= image_tag current_user.image_url,class: "profile__avatar",id: "e"
 				%li.info_list
 					=link_to "Help",root_path,method: :get,class: "info"
 				%li.info_list
