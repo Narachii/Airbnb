@@ -18,7 +18,7 @@
 				%li.info_list
 					=link_to "Messages",root_path,method: :get,class: "info"
 				%li.info_list
-					=link_to "Become a Host",user_hosts_path(current_user),class: "info"
+					=link_to "Become a Host",user_hosts_path(current_user),method: :get,class: "info"
 			-else
 				%li.info_list
 					%div{class: "info",id: "Login"}Log In
