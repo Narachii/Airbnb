@@ -10,6 +10,7 @@ def create
 	if @reservation.save
 		@user = current_user
 		ReservationMailer.post_email(@user,@reservation,@room,@host).deliver
+		ReservationMailer.post_email_to_host(@user,@reservation,@room,@host).deliver
  		format.html { redirect_to root_path, notice: 'User was successfully created.'}
 		format.json { render :index, status: :created, location: @user }
 	else
