@@ -8,11 +8,11 @@
 		%ul
 			-if user_signed_in?
 				%li.info_list
-					=link_to "Log Out",destroy_user_session_path, method: :delete,class: "info"
+					.i.fa.fa-user-circle-o#user_icon{style: "font-size:30px;"}
 				%li.info_list
-					=link_to "Help",root_path,class: "info"
+					=link_to "Help",root_path,method: :get,class: "info"
 				%li.info_list
-					=link_to "Messages",root_path,class: "info"
+					=link_to "Messages",root_path,method: :get,class: "info"
 				%li.info_list
 					=link_to "Become a Host",user_hosts_path(current_user),class: "info"
 			-else
@@ -21,21 +21,24 @@
 				%li.info_list
 					%div{class: "info",id: "signUp"} Sign Up
 				%li.info_list
-					=link_to "Help",root_path,class: "info"
+					=link_to "Help",root_path,method: :get,class: "info"
 	.head-content__nav
 		%ul
 			%li.nav_list
 				.wrapper
-					=link_to "FOR YOU",root_path,class: "nav"
+					=link_to "FOR YOU",root_path,method: :get,class: "nav"
 			%li.nav_list
 				.wrapper
-					=link_to "HOMES",root_path,class: "nav"
+					=link_to "HOMES",root_path,method: :get,class: "nav"
 			%li.nav_list
 				.wrapper
-					=link_to "EXPERIENCES",root_path,class: "nav"
+					=link_to "EXPERIENCES",root_path, method: :get,class: "nav"
 			%li.nav_list
 				.wrapper
-					=link_to "PLACES",root_path,class: "nav"
-
+					=link_to "PLACES",root_path,method: :get,class: "nav"
 / %li.info_list
 / 	=link_to "Trips",root_path,class: "info"
+
+/ %li.info_list
+/ =link_to "Log Out",destroy_user_session_path, method: :delete,class: "info"
+/= image_tag @room.host.user.image_url,class: "avatar"

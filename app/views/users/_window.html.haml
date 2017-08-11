@@ -1,0 +1,27 @@
+.content__window#window
+	%ul
+		%li.window__list
+			.window__text
+				= link_to root_path,method: :get do
+					%span Edit profile
+		%li.window__list
+			.window__text
+				= link_to root_path,method: :get do
+					%span Travel Credit
+		%li.window__list
+			.window__text
+				= link_to root_path,method: :get do
+					%span Account Settings
+		%li.window__list
+			.window__text
+				= link_to root_path,method: :get do
+					%span My Guidebook
+		%li.window__list
+			.window__text
+				= link_to root_path,method: :get do
+					%span Bairbnb for work
+		%li.window__list
+			.window__text
+				= link_to destroy_user_session_path,method: :delete do
+					%span Logout
+

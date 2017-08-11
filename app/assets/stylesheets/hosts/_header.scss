@@ -5,11 +5,11 @@ height:65px;
 .search-bar{
 	float:left;
 	border-left: 1px solid #DBDBDB;
-	padding:0 48px;
+	padding:0 35px;
 
 }
 .search{
-	width:919px;
+	width:900px;
 	height: 62px;
 	border:none;
 	font-size:15px;
@@ -80,6 +80,9 @@ height:65px;
 	}
 }
 
+#user_icon{
+	margin-top: 15px;
+}
 .hosting-button{
 	background-color: #FF5A5F;
 	transition: background 0.3s, border-color 0.3s;
