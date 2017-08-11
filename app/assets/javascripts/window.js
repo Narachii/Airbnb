@@ -40,11 +40,11 @@ $(document).ready(function() {
 										'</ul>'+
 									'</div>'
 	$('#user_icon').on('click', function(){
-		$('#user_icon').append(html);
+		$('#icon_tab').append(html);
 	});
 
 	$(document).click(function(e) {
-  if (!$(e.target).closest('#user_icon').length) {
+  if (!$(e.target).closest('#icon_tab').length) {
     $('#window').remove();
   }});
 })

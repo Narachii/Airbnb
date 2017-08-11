@@ -171,7 +171,14 @@
 	border-bottom: 1px solid #e4e4e4;
 }
 
-
+.profile__avatar{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    float:right;
+    margin-top: 15px;
+    font-size: 25px;
+}
 
 #modal-overlay{
 	z-index:1;
