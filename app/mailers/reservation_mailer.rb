@@ -2,6 +2,7 @@ class ReservationMailer < ApplicationMailer
 	default from: "from@example.com"
 
 	  def post_email(user,reservation,room,host)
+  		@reservation = reservation
 	  	@user = user
 	  	@host_name = host.user.first_name
 	  	@title = room.name
@@ -12,6 +13,7 @@ class ReservationMailer < ApplicationMailer
   end
 
   def post_email_to_host(user,reservation,room,host)
+  		@reservation = reservation
   		@user = user
 	  	@host_name = host.user.first_name
 	  	@title = room.name

@@ -8,8 +8,9 @@
     <p>
     	Thank you very much for your reservation request.
       Your reservation request is as follows.<br />
-      Date of Check In:<%= @check_in%>
+      Date of Check In: <%= @check_in%>
 			Date of Check Out:<%= @check_out%>
+      guest_number :    <%= @reservation.guest %>
 			<br>
 			The host "<%= @host_name %>" will check your request and get back to you soon.
 			We hope you have a nice trip!!

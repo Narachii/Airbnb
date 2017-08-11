@@ -6,10 +6,11 @@
   <body>
     <h1>Reservation request at <%= @title %></h1>
     <p>
-    	You've got a reservation request from <%= @user.first_name %>
+    	You've got a reservation request from "<%= @user.first_name %>"
       The reservation request is as follows.<br />
-      Date of Check In:<%= @check_in%>
+      Date of Check In: <%= @check_in%>
 			Date of Check Out:<%= @check_out%>
+      guest_number :    <%= @reservation.guest %>
 			<br>
 			Please check your house availability and reply to the guest.
 			Let's start hosting your guest!!!
