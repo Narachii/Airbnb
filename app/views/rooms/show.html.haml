@@ -224,25 +224,26 @@
               Similar listings
             .slider-homes#slider3{style: "width:120%;"}
               - @rooms.each do |room|
-                .homes-content
-                  .homes-images
-                    =link_to room_path(id: room.id),method: :get,class: "h-image" do
-                      .pic#x1
-                        =image_tag room.image_url,class: "home-image"
-                  .text
-                    %div
-                      %span.price¥13,088
-                      %span.homes-topic #{room.description.truncate(35, omission: '...')}
-                    .detail
-                      %span #{room.room_type} #{room.place_type}/#{room.property_type}
-                      %span ・
-                      -if room.bed == 1
-                        %span #{room.bed} bed
-                      -else
-                        %span #{room.bed} beds
-                  .rating
-                    %span.stars ☆☆☆☆☆
-                    %span 47reviews
+                -if room.image.present?
+                  .homes-content
+                    .homes-images
+                      =link_to room_path(id: room.id),method: :get,class: "h-image" do
+                        .pic#x1
+                          =image_tag room.image_url,class: "home-image"
+                    .text
+                      %div
+                        %span.price¥13,088
+                        %span.homes-topic #{room.description.truncate(35, omission: '...')}
+                      .detail
+                        %span #{room.room_type} #{room.place_type}/#{room.property_type}
+                        %span ・
+                        -if room.bed == 1
+                          %span #{room.bed} bed
+                        -else
+                          %span #{room.bed} beds
+                    .rating
+                      %span.stars ☆☆☆☆☆
+                      %span 47reviews
       .content
         .content__main
           %footer
