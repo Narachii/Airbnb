@@ -82,6 +82,7 @@ Rails.application.configure do
   end
 
   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { :host => 'http://52.199.245.236:3000/' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
   address:               'smtp.gmail.com',
