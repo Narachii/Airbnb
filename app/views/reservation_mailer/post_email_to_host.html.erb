@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1>Reservation request at <%= @title %></h1>
+    <p>
+    	You've got a reservation request from <%= @user.first_name %>
+      The reservation request is as follows.<br />
+      Date of Check In:<%= @check_in%>
+			Date of Check Out:<%= @check_out%>
+			<br>
+			Please check your house availability and reply to the guest.
+			Let's start hosting your guest!!!
+    </p>
+    <footer>
+    <p>
+    Bairbnb http://52.199.245.236:3000/
+    </p>
+    </footer>
+  </body>
+</html>
