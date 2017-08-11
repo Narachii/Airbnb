@@ -1,0 +1,24 @@
+.content__window{
+	float:right;
+	position: absolute;
+	right:0;
+	top:8%;
+	background-color: #ffffff;
+	min-width: 282px;
+	max-width: 460px;
+	border: 1px solid #DBDBDB;
+	z-index: 1;
+}
+.window{
+	&__list{
+		padding:0 16px;
+		color: #484848;
+		border-bottom: 1px solid transparent;
+		border-color: #F2F2F2;
+	}
+	&__text{
+		padding:16px 0;
+		font-size: 15px;
+		color: #767676;
+	}
+}
