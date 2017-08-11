@@ -20,13 +20,13 @@
 				=link_to "Messages",root_path,class: "info"
 			-if controller_name == "rooms" && current_user.id == @room.host.user.id
 				%li.info_list
-					=link_to "Edit", "/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/#{@room.id}/room_steps/home",class: "info"
+					=link_to "Edit", "/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/#{@room.id}/room_steps/home",method: :get,class: "info"
 			-if current_user.host && @room == nil
 				%li.info_list
-					=link_to "Host","/users/#{current_user.id}/hosts/#{current_user.host.id}",class: "info"
+					=link_to "Host","/users/#{current_user.id}/hosts/#{current_user.host.id}",method: :get,class: "info"
 			-elsif current_user.host
 				%li.info_list
-					=link_to "Host","/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/#{@room.id}/room_steps/home",class: "info"
+					=link_to "Host","/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/#{@room.id}/room_steps/home",medthod: :get,class: "info"
 		-else
 			%li.info_list
 				%div{class: "info",id: "Login"}Log In
