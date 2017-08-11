@@ -9,10 +9,10 @@
 			-if user_signed_in?
 				%label#user_icon
 					%li.info_list#icon_tab
-						-if current_user.image == nil
-							.i.fa.fa-user-circle-o{style: "font-size:30px;"}
+						-if current_user.image.present?
+							= image_tag current_user.image_url,class: "profile__avatar"
 						-else
-							= image_tag current_user.image_url,class: "profile__avatar",id: "e"
+							.i.fa.fa-user-circle-o.profile__avatar{style: "font-size:30px;"}
 				%li.info_list
 					=link_to "Help",root_path,method: :get,class: "info"
 				%li.info_list
