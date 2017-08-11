@@ -43,6 +43,7 @@ gem "gmaps4rails"
 gem 'bootstrap3-datetimepicker-rails'
 gem 'momentjs-rails'
 gem 'dotenv-rails'
+gem 'execjs'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
