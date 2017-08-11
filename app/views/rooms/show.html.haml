@@ -195,22 +195,22 @@
                 %br
                 %br
                 I take pride in knowing I have consistently been providing comfortable experiences for over 250 guests from all over the world.
+              .text{style: "font-size:19px; margin:16px 0;"}
+                The neighborhood
+              .details__text
+                = @host.first_name + "'s"
+                home is located in
+                = @room.state + ","
+                = @room.city + ","
+                = @room.country
+                %br
+                %br
+                Perfect location. So many terrific restaurants, bars and speciality stores that appeal to tourists
+                %br
+                %br
+                100% walk score. Close to eaton centre, air canada centre, rogers centre CN tower, aquarium, St Lawrence market and toronto's entertainment district.
       .body__bottom{style: "margin-top:40px; padding-right:20%;"}
         .description__location
-          .text{style: "font-size:19px; margin-bottom:16px;"}
-            The neighborhood
-          .details__text
-            = @host.first_name + "'s"
-            home is located in
-            = @room.state + ","
-            = @room.city + ","
-            = @room.country
-            %br
-            %br
-            Perfect location. So many terrific restaurants, bars and speciality stores that appeal to tourists
-            %br
-            %br
-            100% walk score. Close to eaton centre, air canada centre, rogers centre CN tower, aquarium, St Lawrence market and toronto's entertainment district.
           .details__map#map
           :javascript
             handler = Gmaps.build('Google');
