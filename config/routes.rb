@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   	  resources :reservations, only: :create
   	end
   resources :users do
+    collection do
+      get "media"
+    end
 	  resources :hosts do
 	  	resources :rooms do
 		  	resources :room_steps
