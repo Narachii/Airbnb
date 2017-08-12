@@ -83,17 +83,17 @@
 				.div{style: 'margin-top:16px;'}
 					%ul
 						%li.list_info
-							=link_to "About us" ,root_path
+							=link_to "About us" ,root_path,method: :get
 						%li.list_info
-							=link_to "Careers" ,root_path
+							=link_to "Careers" ,root_path,method: :get
 						%li.list_info
-							=link_to "Press" ,root_path
+							=link_to "Press" ,root_path,method: :get
 						%li.list_info
-							=link_to "Policies" ,root_path
+							=link_to "Policies" ,root_path,method: :get
 						%li.list_info
-							=link_to "Help" ,root_path
+							=link_to "Help" ,root_path,method: :get
 						%li.list_info
-							=link_to "Diversity & Belonging" ,root_path
+							=link_to "Diversity & Belonging" ,root_path,method: :get
 	.column__discover
 		.div
 			%section
@@ -102,19 +102,19 @@
 				.div.b{style: 'margin-top:16px;'}
 					%ul
 						%li.list_info
-							=link_to "Trust & Safety" ,root_path,class: "link_info"
+							=link_to "Trust & Safety" ,root_path,method: :get,class: "link_info"
 						%li.list_info
-							=link_to "Travel Credit" ,root_path
+							=link_to "Travel Credit" ,root_path,method: :get
 						%li.list_info
-							=link_to "Gift Cards" ,root_path
+							=link_to "Gift Cards" ,root_path,method: :get
 						%li.list_info
-							=link_to "Bairbnb Citizen" ,root_path
+							=link_to "Bairbnb Citizen" ,root_path,method: :get
 						%li.list_info
-							=link_to "Business Travel" ,root_path
+							=link_to "Business Travel" ,root_path,method: :get
 						%li.list_info
-							=link_to "Guidebooks" ,root_path
+							=link_to "Guidebooks" ,root_path,method: :get
 						%li.list_info
-							=link_to "Bairbnbmag" ,root_path
+							=link_to "Bairbnbmag" ,root_path,method: :get
 	.column__hosting
 		.div
 			%section
@@ -123,13 +123,13 @@
 				.div.b{style: 'margin-top:16px;'}
 					%ul
 						%li.list_info
-							=link_to "Why Host" ,root_path
+							=link_to "Why Host" ,root_path,method: :get
 						%li.list_info
-							=link_to "Hospitality" ,root_path
+							=link_to "Hospitality" ,root_path,method: :get
 						%li.list_info
-							=link_to "Responsible Hosting" ,root_path
+							=link_to "Responsible Hosting" ,root_path,method: :get
 						%li.list_info
-							=link_to "Community Center" ,root_path
+							=link_to "Community Center" ,root_path,method: :get
 .div{style: 'margin-top: 48px; margin-bottom: 24px; clear:both;'}
 	.line{style: "margin-top: 16px; margin-bottom: 16px;"}
 		.ruler
@@ -148,10 +148,10 @@
 				%span.social-icon
 					=link_to fa_icon("instagram"),"https://www.instagram.com",target: "_bank"
 			%li.items
-				=link_to "Site Map" ,root_path
+				=link_to "Site Map" ,root_path,method: :get
 			%li.items
-				=link_to "Privacy" ,root_path
+				=link_to "Privacy" ,root_path,method: :get
 			%li.items
-				=link_to "Terms", root_path
+				=link_to "Terms", root_path,method: :get
 			%li.items
 

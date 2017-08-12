@@ -1,8 +1,164 @@
 .main
 	%header
-		= render "header"
-	.body{style: "overflow: auto;"}
-	.body__bottom
+		= render "hosts/header"
+		.menu__bar
+			.bar__wrapper
+				%ul.bar__text
+					%li.bar__list
+						= link_to root_path ,method: :get do
+							Dashboard
+					%li.bar__list
+						= link_to root_path ,method: :get do
+							Inbox
+					%li.bar__list
+						= link_to root_path ,method: :get do
+							Your listing
+					%li.bar__list
+						= link_to root_path ,method: :get do
+							Host Assist
+					%li.bar__list
+						= link_to root_path ,method: :get do
+							Your trips
+					%li.bar__list{style: "color: white;"}
+						= link_to root_path ,method: :get do
+							Profile
+					%li.bar__list
+						= link_to root_path ,method: :get do
+							Account
+					%li.bar__list
+						= link_to root_path ,method: :get do
+							Travel Credit
+	.body{style: "overflow: auto; clear:both;" }
+		.content__menu
+			.menu__wrapper
+				.menu__left
+					.side__nav
+						%ul
+							%li.left__list
+								= link_to edit_user_path ,method: :get do
+									%span Edit Profile
+							%li.left__list
+								= link_to media_users_path ,method: :get do
+									%span Photos and Video
+							%li.left__list
+								= link_to root_path ,method: :get do
+									%span Trust and Verification
+							%li.left__list
+								= link_to root_path ,method: :get do
+									%span Reviews
+							%li.left__list
+								= link_to root_path ,method: :get do
+									%span References
+					.side__button
+						= link_to user_path, method: :get do
+							%span.button__text View Profile
+			.menu__right
+				= form_for @user do |f|
+					.update__form
+						.panel__header
+							%span Required
+						.panel__body
+							.panel__row
+								.row__wrapper
+									.row__left
+										First name
+									.row__right
+										= f.text_field :first_name,class: "row__right-form"
+							.panel__row
+								.row__wrapper
+									.row__left
+										Last name
+									.row__right
+										= f.text_field :first_name,class: "row__right-form"
+										%span.row__text Your public profile only shows your first name. When you request a booking, your host will see your first and last name.
+							.panel__row
+								.row__wrapper
+									.row__left
+										%span I Am
+										.i.fa.fa-lock
+									.row__right.select__bar
+										= f.select :gender,options_for_select({Gender: "",
+											Male: "Male",
+											Female: "Female",
+											Other: "Other"})
+										%div.row__text{style: "clear:both;"}	We use this data for analysis and never share it with other users.
+							.panel__row
+								.row__wrapper
+									.row__left
+										%span Birth Date
+										.i.fa.fa-lock
+									.row__right
+										.row__birth
+											%select.birth-month{id: "user[birthday_month]" ,name: "user[birthday_month]"}
+												=render "devise/registrations/month-options"
+										.row__birth.day
+											%select.birth-day{id: "user[birthday_day]" ,name: "user[birthday_day]"}
+												=render "devise/registrations/days-options"
+										.row__birth
+											%select.birth-year{id: "user[birthday_year]" ,name: "user[birthday_year]"}
+												=render "devise/registrations/year-options"
+										%span.row__text{style: "float:left;"} The magical day you were dropped from the sky by a stork. We use this data for analysis and never share it with other users.
+							.panel__row
+								.row__wrapper
+									.row__left
+										%span Email Address
+										.i.fa.fa-lock
+									.row__right
+										= f.email_field :email,class: "row__right-form"
+										%span.row__text We won’t share your private email address with other Airbnb users.
+							.panel__row
+								.row__wrapper
+									.row__left
+										%span	Phone number
+										.i.fa.fa-lock
+									.row__right
+										= f.phone_field :phone_number,class: "row__right-form"
+										%span.row__text This is only shared once you have a confirmed booking with another Airbnb user. This is how we can all get in touch.
+							.panel__row
+								.row__wrapper
+									.row__left
+										%span	Preferred Language
+										.i.fa.fa-lock
+									.row__right.select__bar
+										.row__birth
+											%select.birth-month{id: "user[language]" ,name: "user[language]"}
+												=render "lang-option"
+										%div.row__text{style: "clear:both;"} We'll send you messages in this language.
+							.panel__row
+								.row__wrapper
+									.row__left
+										%span	Preferred Currency
+										.i.fa.fa-lock
+									.row__right.select__bar
+										.row__birth
+											%select.birth-month{id: "user[currency]" ,name: "user[currency]"}
+												=render "currency-option"
+										%div.row__text{style: "clear:both;"} We’ll show you prices in this currency.
+							.panel__row
+								.row__wrapper
+									.row__left
+										%span Where You Live
+									.row__right
+										= f.text_field :location,placeholder: "e.g. Paris, France / Brooklyn, NY / Chicago, IL",class: "row__right-form"
+							.panel__row
+								.row__wrapper
+									.row__left
+										%span Describe Yourself
+									.row__right
+										= f.text_area :text,:size => "10x5",placeholder: "e.g. Paris, France / Brooklyn, NY / Chicago, IL",class: "row__right-form"
+										%div.row__text{style: "clear:both;"}
+											Airbnb is built on relationships. Help other people get to know you.
+											%br
+											%br
+												Tell them about the things you like: What are 5 things you can’t live without? Share your favorite travel destinations, books, movies, shows, music, food.
+											%br
+											%br
+												Tell them what it’s like to have you as a guest or host: What’s your style of traveling? Of Airbnb hosting?
+											%br
+												Tell them about you: Do you have a life motto?
+						%div{style: "float:left;"}
+							=f.submit "Save", class: "next_form"
+	.body__bottom{style: "margin-top:24px;"}
 	.content
 		.content__main
 			%footer

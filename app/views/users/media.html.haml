@@ -1,0 +1,81 @@
+.main
+	%header
+		= render "hosts/header"
+		.menu__bar
+			.bar__wrapper
+				%ul.bar__text
+					%li.bar__list
+						= link_to root_path ,method: :get do
+							Dashboard
+					%li.bar__list
+						= link_to root_path ,method: :get do
+							Inbox
+					%li.bar__list
+						= link_to root_path ,method: :get do
+							Your listing
+					%li.bar__list
+						= link_to root_path ,method: :get do
+							Host Assist
+					%li.bar__list
+						= link_to root_path ,method: :get do
+							Your trips
+					%li.bar__list{style: "color: white;"}
+						= link_to root_path ,method: :get do
+							Profile
+					%li.bar__list
+						= link_to root_path ,method: :get do
+							Account
+					%li.bar__list
+						= link_to root_path ,method: :get do
+							Travel Credit
+	.body{style: "overflow: auto; clear:both;" }
+		.content__menu
+			.menu__wrapper
+				.menu__left
+					.side__nav
+						%ul
+							%li.left__list
+								= link_to edit_user_path(@user) ,method: :get do
+									%span Edit Profile
+							%li.left__list
+								= link_to media_users_path ,method: :get do
+									%span Photos and Video
+							%li.left__list
+								= link_to root_path ,method: :get do
+									%span Trust and Verification
+							%li.left__list
+								= link_to root_path ,method: :get do
+									%span Reviews
+							%li.left__list
+								= link_to root_path ,method: :get do
+									%span References
+					.side__button
+						= link_to user_path(@user), method: :get do
+							%span.button__text View Profile
+			.menu__right
+				.update__form
+					.panel__header
+						%span Profile Photo
+					.panel__body
+						%div{style: "float:left;"}
+							%label
+								%div
+									-if current_user.image.present?
+										= image_tag current_user.image_url,class: "profile__photo"
+									-else
+										.i.fa.fa-user-circle-o.profile__avatar{style: "font-size:30px;"}
+						%div{style: "float:left; width:60%; padding:0 12px ;"}
+							%div.row__text
+							Clear frontal face photos are an important way for hosts and guests to learn about each other.
+							It’s not much fun to host a landscape! Be sure to use a photo that clearly shows your face and doesn’t include any personal or sensitive info you’d rather not have hosts or guests see.
+							.row__submit
+								= form_for @user do |f|
+									= f.label :image do
+										.row__submit-button
+											%span Upload a file from your computer
+									=	f.file_field  :image,class: "hidden";
+	.body__bottom{style: "margin-top:24px;"}
+	.content
+		.content__main
+			%footer
+				= render "users/footer"
