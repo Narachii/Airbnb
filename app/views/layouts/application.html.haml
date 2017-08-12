@@ -9,3 +9,5 @@
     <link rel="icon" type="http://s1.edi-static.fr/Img/BREVE/2014/7/244220/152443.jpg" href="http://s1.edi-static.fr/Img/BREVE/2014/7/244220/152443.jpg" sizes="16x16">
   %body
     = yield
+    -if user_signed_in?
+      %input{name: "current_user_id", type: "hidden", value: current_user.id, class: 'current_user_id' }
