@@ -11,15 +11,16 @@
 					%label
 					= form_for @room, url: wizard_path do |f|
 						= f.label :image do
-							.inside
+							.inside.view_box
 								.middle__button-wrapper
 									.middle__button
 										%span.fa.fa-cloud-upload
 										%span Upload Photos
-								=	f.file_field  :image,class: "hidden"
+								=	f.file_field  :image,class: "hidden file"
 						.request__bottom{style: "width:100%; margin-top:10px;"}
 							.back
 								=link_to "← Back", wizard_path(:home)
 							%div
 								=f.submit "continue", class: "next_form"
+
 
