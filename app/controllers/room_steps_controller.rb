@@ -25,7 +25,7 @@ class RoomStepsController < ApplicationController
 				if @room.host.user.image.present?
 					redirect_to wizard_path(:phone)
 				else
-					render_wizard
+					redirect_to wizard_path(:profile_photo)
 				end
 			when :phone
 				@user = current_user
