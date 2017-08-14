@@ -6,7 +6,7 @@
 				=link_to "See all" ,root_path
 	.slider-homes#slider
 		- @rooms.each do |room|
-			-if room.image.present?
+			-if room.progress == true
 				.homes-content
 					.homes-images
 						=link_to room_path(id: room.id),method: :get,class: "h-image" do

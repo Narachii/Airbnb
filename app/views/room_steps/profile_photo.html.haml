@@ -7,14 +7,15 @@
 				.request__form{style: "overflow:scroll;"}
 					.request__title Add your photo
 					.request__content{style: "float:left;"}
-						.i.fa.fa-user-circle-o{style: "font-size:144px;"}
+						.view_box.profile__image
+							.i.fa.fa-user-circle-o{style: "font-size:144px;"}
 					.form__list
 					= form_for @user, url: wizard_path do |f|
 						= f.label :image do
 							.image__button
 								%span.fa.fa-cloud-upload
-								%span Upload Photos
-						=	f.file_field  :image,class: "hidden";
+								%span.button__text Upload Photos
+						=	f.file_field  :image,class: "hidden file";
 						.request__bottom.form_list.form_position
 							.back
 								=link_to "← Back",previous_wizard_path

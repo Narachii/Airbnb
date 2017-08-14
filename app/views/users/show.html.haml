@@ -7,7 +7,7 @@
 				%div{style: "float:left;"}
 					%label
 						%div
-							-if current_user.image.present?
+							-if user.progress == true
 								= image_tag current_user.image_url,class: "profile__photo"
 							-else
 								.i.fa.fa-user-circle-o.profile__avatar{style: "font-size:30px;"}
@@ -27,10 +27,11 @@
 												%div.verification__text
 													%span Phone number
 													%i.fa.fa-check-circle-o.check__icon
-										%list
-											%div.verification__text.more__info
-												= link_to edit_user_path(@user),method: :get do
-													%span Verify more info
+										- if current_user.id == @user.id
+											%list
+												%div.verification__text.more__info
+													= link_to edit_user_path(@user),method: :get do
+														%span Verify more info
 			.menu__right
 				.profile__top
 					%h1.profile__name
@@ -45,9 +46,10 @@
 									Joined in
 									= @month
 									= @year
-								.profile__edit
-									= link_to edit_user_path(@user),method: :get do
-										Edit Profile
+								- if current_user.id == @user.id
+									.profile__edit
+										= link_to edit_user_path(@user),method: :get do
+											Edit Profile
 					.profile__bottom
 						= @user.text
 	.body__bottom{style: "margin-top:24px;"}
