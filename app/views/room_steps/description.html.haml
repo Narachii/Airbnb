@@ -16,5 +16,7 @@
 								.back
 									=link_to "← Back",previous_wizard_path
 								%div
+									- if @room.host.user.image
+										= f.hidden_field :progress_2, value: "1"
 									=f.submit "Next",class: "next_form"
 			.body__right

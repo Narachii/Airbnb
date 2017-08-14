@@ -1,6 +1,6 @@
 class RoomStepsController < ApplicationController
 	include Wicked::Wizard
-	steps :room, :bedrooms, :bed_details, :bathrooms , :locations, :amenities, :spaces,:image, :title, :description,:profile_photo,:phone,:home
+	steps :room, :bedrooms, :bed_details, :bathrooms , :locations, :amenities, :spaces,:image, :title, :description,:profile_photo,:phone,:home,:price
 # :image,:description,:title,:phone,:profile_photo
 
 	def show
@@ -31,8 +31,11 @@ class RoomStepsController < ApplicationController
 				@user = current_user
 				@user.update(user_params)
 				@room = Room.find(params[:room_id])
-				@room.update(progress: 1)
 				redirect_to wizard_path(:home)
+			when :price
+				@room = Room.find(params[:room_id])
+				@room.update(room_params)
+				redirect_to root_path
 			else
 				@room = Room.find(params[:room_id])
 				@room.update(room_params)
@@ -69,6 +72,9 @@ class RoomStepsController < ApplicationController
 			:name,
 			:description,
 			:progress,
+			:progress_1,
+			:progress_2,
+			:price,
 			amenity_ids:[],
 			space_ids:[])
 	end
