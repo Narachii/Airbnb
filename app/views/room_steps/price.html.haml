@@ -1,0 +1,20 @@
+.main
+	%header
+		= render "header2"
+	.body
+		.body__rooms
+			.body__left
+				.request__form{style: "overflow:scroll;"}
+					.request__title Set price
+					.request__content
+						%div.form__list
+						= form_for @room, url: wizard_path do |f|
+							.field{style: "float: left; margin-top:5px;"}
+								= f.text_field :price,placeholder:"e.g. 100$ *per night , digits only", class: "form__title"
+							.request__bottom.form_list.form_position
+								.back
+									=link_to "← Back",previous_wizard_path
+								%div
+									= f.hidden_field :progress,value: 1
+									=f.submit "Finish",class: "next_form"
+			.body__right
