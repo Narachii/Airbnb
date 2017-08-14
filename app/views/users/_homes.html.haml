@@ -14,7 +14,8 @@
 								=image_tag room.image_url,class: "home-image"
 					.text
 						%div
-							%span.price¥13,088
+							%span.price
+								$ #{room.price}
 							%span.homes-topic #{room.description.truncate(35, omission: '...')}
 						.detail
 							%span #{room.room_type} #{room.place_type}/#{room.property_type}

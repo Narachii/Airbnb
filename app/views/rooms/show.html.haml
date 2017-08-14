@@ -15,7 +15,7 @@
             %span.side-header__detail
               From
             %span.side-header__detail
-              ¥ 9,013
+              $ #{@room.price}
             %span.side-header__detail
               per night
         .side-content__body
@@ -233,7 +233,8 @@
                           =image_tag room.image_url,class: "home-image"
                     .text
                       %div
-                        %span.price¥13,088
+                        %span.price
+                          $ #{room.price}
                         %span.homes-topic #{room.description.truncate(35, omission: '...')}
                       .detail
                         %span #{room.room_type} #{room.place_type}/#{room.property_type}
