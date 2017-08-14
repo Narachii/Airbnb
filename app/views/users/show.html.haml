@@ -1,0 +1,59 @@
+.main
+	%header
+		= render "hosts/header"
+	.body{style: "overflow: auto; clear:both;" }
+		.content__menu.profile__content
+			.menu__left
+				%div{style: "float:left;"}
+					%label
+						%div
+							-if user.progress == true
+								= image_tag current_user.image_url,class: "profile__photo"
+							-else
+								.i.fa.fa-user-circle-o.profile__avatar{style: "font-size:30px;"}
+					.menu__wrapper
+						.update__form.prof
+							.panel__header
+								%span Verified info
+							.panel__body.profile__verification
+								.valifiation__list
+									%ul
+										%list
+											%div.verification__text
+												%span Email address
+												%i.fa.fa-check-circle-o.check__icon
+										- if @user.phone_number.present?
+											%list
+												%div.verification__text
+													%span Phone number
+													%i.fa.fa-check-circle-o.check__icon
+										- if current_user.id == @user.id
+											%list
+												%div.verification__text.more__info
+													= link_to edit_user_path(@user),method: :get do
+														%span Verify more info
+			.menu__right
+				.profile__top
+					%h1.profile__name
+						Hey, I'm
+						= @user.first_name + "!"
+						.profile__detail
+							%ul
+								-if @user.location.present?
+									%span
+										= @user.location + "・"
+								%span
+									Joined in
+									= @month
+									= @year
+								- if current_user.id == @user.id
+									.profile__edit
+										= link_to edit_user_path(@user),method: :get do
+											Edit Profile
+					.profile__bottom
+						= @user.text
+	.body__bottom{style: "margin-top:24px;"}
+	.content
+		.content__main
+			%footer
+				= render "users/footer"

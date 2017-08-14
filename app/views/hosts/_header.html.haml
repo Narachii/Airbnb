@@ -8,21 +8,25 @@
 					%input.search{"aria-label" => "Search", :autocomplete => "off", :name => "location", :placeholder => "Search", :type => "text"}
 	%ul.lists
 		-if user_signed_in?
-			%li.info_list
-				=link_to "Log Out",destroy_user_session_path, method: :delete,class: "info"
+			%label#user_icon
+				%li.info_list#icon_tab
+					-if current_user.image.present?
+						= image_tag current_user.image_url,class: "profile__avatar"
+					-else
+						.i.fa.fa-user-circle-o.profile__avatar{style: "font-size:30px;"}
 			%li.info_list
 				=link_to "Help",root_path,class: "info"
 			%li.info_list
 				=link_to "Messages",root_path,class: "info"
 			-if controller_name == "rooms" && current_user.id == @room.host.user.id
 				%li.info_list
-					=link_to "Edit", "/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/#{@room.id}/room_steps/home",class: "info"
+					=link_to "Edit", "/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/#{@room.id}/room_steps/home",method: :get,class: "info"
 			-if current_user.host && @room == nil
 				%li.info_list
-					=link_to "Host","/users/#{current_user.id}/hosts/#{current_user.host.id}",class: "info"
+					=link_to "Host","/users/#{current_user.id}/hosts/#{current_user.host.id}",method: :get,class: "info"
 			-elsif current_user.host
 				%li.info_list
-					=link_to "Host","/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/#{@room.id}/room_steps/home",class: "info"
+					=link_to "Host","/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/#{@room.id}/room_steps/home",medthod: :get,class: "info"
 		-else
 			%li.info_list
 				%div{class: "info",id: "Login"}Log In

@@ -19,6 +19,14 @@ class RoomStepsController < ApplicationController
 				@user = current_user
 				@user.update(user_params)
 				render_wizard @user
+			when :description
+				@room = Room.find(params[:room_id])
+				@room.update(room_params)
+				if @room.host.user.image.present?
+					redirect_to wizard_path(:phone)
+				else
+					redirect_to wizard_path(:profile_photo)
+				end
 			when :phone
 				@user = current_user
 				@user.update(user_params)
@@ -43,7 +51,26 @@ class RoomStepsController < ApplicationController
 	private
 
 	def room_params
-		params.require(:room).permit(:place_type,:property_type,:room_type,:guest_number,:bed,:bedroom,:bathroom,:country,:zipcode,:state,:city,:street_address,:lattitude,:longitude,:optional,:image,:name, :description,:progress,amenity_ids:[],space_ids:[])
+		params.require(:room).permit(:place_type,
+			:property_type,
+			:room_type,
+			:guest_number,
+			:bed,:bedroom,
+			:bathroom,
+			:country,
+			:zipcode,
+			:state,
+			:city,
+			:street_address,
+			:lattitude,
+			:longitude,
+			:optional,
+			:image,
+			:name,
+			:description,
+			:progress,
+			amenity_ids:[],
+			space_ids:[])
 	end
 
 	def user_params
