@@ -9,12 +9,10 @@
 }
 
 .inside{
-		width:100%;
-				border: 2px dashed #bbb;;
+	border: 2px dashed #bbb;;
 	width:100%;
 	border-radius: 6px;
   height: 356px;
-	padding:20px;
 	margin-bottom: 100px;
 
 }
@@ -114,6 +112,7 @@
 	transition: background 0.3s, border-color 0.3s;
 	padding:20px 36px;
 	margin-top:90px;
+	margin-left: 30px;
   text-align: center ;
   text-decoration: none;
   border: 1px solid #c4c4c4;
@@ -124,6 +123,11 @@
   font-weight: 400;
   float:left;
 
+}
+
+.profile__image{
+	width:122px;
+	height:122px;
 }
 
 .phone__code{
