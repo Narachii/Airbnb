@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = current_user
+		@user = User.find(params[:id] )
 		month = ["January","February","March","April","May","June","July","August","September","October","November","December"]
 		user_month = @user[:created_at].month - 1
 		@month = month[user_month]
