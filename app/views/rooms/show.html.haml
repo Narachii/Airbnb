@@ -119,7 +119,7 @@
                 You will be sharing the space with myself. I am a very easy going 29 year old Canadian guy working full time at TD bank. You will receive a key/fob that acesses all of the buildings amenities and may come and go as you please.
                 I have been hosting people from all over the world for over a year. As an Air B n B host, my job is to ensure my guests have a comfortable stay. Please do not be shy to ask me specific questions prior to booking, either about the space or the city.
               .text__link
-                = link_to "Ask host a question" ,root_path
+                = link_to "Ask host a question" ,user_path(id: @room.host.user.id)
               .icons__border
             .description__facilities
               .facilities__left
@@ -225,7 +225,7 @@
               Similar listings
             .slider-homes#slider3{style: "width:120%;"}
               - @rooms.each do |room|
-                -if room.image.present?
+                -if room.progress == true
                   .homes-content
                     .homes-images
                       =link_to room_path(id: room.id),method: :get,class: "h-image" do

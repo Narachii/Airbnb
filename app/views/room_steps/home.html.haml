@@ -16,7 +16,7 @@
 								%span STEP 1
 								%h3{style: "font-size:24px;"} Start with the basics
 								%div Beds, bathrooms, amenities, and more
-								-if @room.spaces.present?
+								-if @room.progress_1 == true
 									.container__left{style: "float:left; font-size: 14px; color: #00a699;"}
 										=link_to " Change", wizard_path(:room),class: "change"
 								-else
@@ -35,7 +35,7 @@
 									.container__left{style: "float:left; font-size: 14px; color: #00a699;"}
 										=link_to " Change", wizard_path(:image),class: "change"
 								-else
-									- if @room.spaces.present?
+									- if @room.progress_1 == true
 										.container__left{style: "float:left; font-size: 19px;"}
 											= link_to wizard_path(:image) do
 												.continue
@@ -47,9 +47,9 @@
 								%span STEP 3
 								%h3{style: "font-size:24px;"} Get ready for guests
 								%div Booking settings, calendar, price
-								-if @room.image.present?
+								-if @room.progress_2 == true
 									.container__left{style: "float:left; font-size: 19px;"}
-										= link_to wizard_path(:test),method: :get do
+										= link_to wizard_path(:price),method: :get do
 											.continue
 												%span Continue
 								.bed__details

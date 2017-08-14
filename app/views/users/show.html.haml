@@ -7,7 +7,7 @@
 				%div{style: "float:left;"}
 					%label
 						%div
-							-if user.progress == true
+							-if current_user.image.present?
 								= image_tag current_user.image_url,class: "profile__photo"
 							-else
 								.i.fa.fa-user-circle-o.profile__avatar{style: "font-size:30px;"}
