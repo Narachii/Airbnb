@@ -69,7 +69,7 @@
 									.row__left
 										Last name
 									.row__right
-										= f.text_field :first_name,class: "row__right-form"
+										= f.text_field :last_name,class: "row__right-form"
 										%span.row__text Your public profile only shows your first name. When you request a booking, your host will see your first and last name.
 							.panel__row
 								.row__wrapper
@@ -145,7 +145,7 @@
 									.row__left
 										%span Describe Yourself
 									.row__right
-										= f.text_area :text,:size => "10x5",placeholder: "e.g. Paris, France / Brooklyn, NY / Chicago, IL",class: "row__right-form"
+										= f.text_area :text,:size => "10x5",placeholder: "e.g. Hello!! my name is ",class: "row__right-form"
 										%div.row__text{style: "clear:both;"}
 											Airbnb is built on relationships. Help other people get to know you.
 											%br
