@@ -182,7 +182,8 @@
                   %span.text{style: "font-size:20px;"}
                     Hosted by
                     = @room.host.user.first_name
-                    = image_tag @room.host.user.image_url,class: "avatar"
+                    = link_to user_path(id: @room.host.user.id) do
+                      = image_tag @room.host.user.image_url,class: "avatar"
               .details__text{style: "clear:both;"}
                 My name is
                 = @room.host.user.first_name
