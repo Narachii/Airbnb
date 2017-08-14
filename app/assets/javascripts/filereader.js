@@ -14,7 +14,6 @@ $(document).ready(function () {
 
      $('.fa-user-circle-o').remove();
      $('.edit__profile').remove();
-     $('.img_view').remove();
     var img = `<img width="100%" height= "100%" padding= "20px"  alt="" class="img_view">`;
     view_box.append(img);
 
