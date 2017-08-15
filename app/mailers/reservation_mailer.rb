@@ -9,7 +9,9 @@ class ReservationMailer < ApplicationMailer
 	  	@location = room.city
 	  	@check_in = reservation.data_in
 	  	@check_out = reservation.date_out
-	  	@price = reservation.guest * room.price
+	  	stay_date = @check_out - @check_in
+	  	@stay = stay_date.to_i
+	  	@price = reservation.guest * room.price * @stay
     	mail to: user.email, subject: "Confirmation of your reservation request"
   end
 
@@ -21,6 +23,9 @@ class ReservationMailer < ApplicationMailer
 	  	@location = room.city
 	  	@check_in = reservation.data_in
 	  	@check_out = reservation.date_out
+	  	stay_date = @check_out - @check_in
+	  	@stay = stay_date.to_i
+	  	@price = reservation.guest * room.price * @stay
   		mail to: host.user.email, subject: "Reservation request from #{@check_in} to #{@check_out}"
   end
 end
