@@ -9,7 +9,7 @@
       =image_tag @room.image_url,class: "show__pic"
   .body{style: "overflow: auto;"}
     .body__content
-      .side-content
+      .side-content#float-sns-box
         .side-content__header
           .side-header__text
             %span.side-header__detail
@@ -18,7 +18,7 @@
               $ #{@room.price}
             %span.side-header__detail
               per night
-        .side-content__body
+        .side-content__body.effect
           = form_for @reservation, url:  room_reservations_path(room_id: params[:id]) do |f|
             .side-content__wrapper
               .data__content
