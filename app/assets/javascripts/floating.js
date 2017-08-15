@@ -2,10 +2,10 @@ var setBoxId = '#float-sns-box';      // スクロールさせる要素
 var initOffsetTop = null;   // 要素の初期位置
 $(document).ready(function() {
     // 初期位置取得
-    initOffsetTop = $(setBoxId).offset().top;
-
-    $('.effect').css("opacity","1");
-
+    if (setBoxId != null){
+      initOffsetTop = $(setBoxId).offset().top
+      $('.effect').css("opacity","1");
+    }
 
 });
 
