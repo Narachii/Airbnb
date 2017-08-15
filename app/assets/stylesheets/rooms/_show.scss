@@ -152,9 +152,21 @@
 	margin:0 auto;
 }
 
+// #float-sns-box {
+//     width: 100px;
+//     height: 470px;
+//     margin-left: -110px;
+//     display: block;
+//     border: #e0e0e0 1px solid;
+//     z-index: 2;
+//     background-color: white;
+// }
 
 
 .side-content{
+    position: absolute;
+    top:68.8%;
+    right:80px;
 		width:315px;
 		height:348px;
 		margin-right: 2%;
@@ -168,6 +180,7 @@
     }
     &__body{
     	    border: 1px solid #dce0e0;
+    	    background-color: white;
     }
     &__wrapper{
     	padding:20px;
@@ -224,6 +237,14 @@
     color: #484848;
     font-weight: 300;
 	}
+}
+.off{
+	// transform: rotateX(0deg)!important;
+	opacity: 0;
+}
+
+.on{
+	opacity: 1;
 }
 
 .side{
