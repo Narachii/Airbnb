@@ -1,0 +1,9 @@
+.message{style: "clear:both;"}
+	.chat-box
+		.chat-area
+			.chat-face.opponent__face
+				= image_tag message.user.image_url,class: "profile__avatar message__avatar"
+				.message__name.opponent__name
+					= message.user.first_name
+			.chat-hukidashi.opponent__hukidashi
+				= message.body

@@ -24,6 +24,12 @@ class UsersController < ApplicationController
 		@year =@user[:created_at].year
 	end
 
+	def inbox
+		@user = current_user
+		@messages = Message.all
+	end
+
+
 	def media
 		@user = current_user
 	end

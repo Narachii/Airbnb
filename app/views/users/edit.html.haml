@@ -1,33 +1,7 @@
 .main
 	%header
 		= render "hosts/header"
-		.menu__bar
-			.bar__wrapper
-				%ul.bar__text
-					%li.bar__list
-						= link_to root_path ,method: :get do
-							Dashboard
-					%li.bar__list
-						= link_to root_path ,method: :get do
-							Inbox
-					%li.bar__list
-						= link_to root_path ,method: :get do
-							Your listing
-					%li.bar__list
-						= link_to root_path ,method: :get do
-							Host Assist
-					%li.bar__list
-						= link_to root_path ,method: :get do
-							Your trips
-					%li.bar__list{style: "color: white;"}
-						= link_to root_path ,method: :get do
-							Profile
-					%li.bar__list
-						= link_to root_path ,method: :get do
-							Account
-					%li.bar__list
-						= link_to root_path ,method: :get do
-							Travel Credit
+		= render "menu-bar"
 	.body{style: "overflow: auto; clear:both;" }
 		.content__menu
 			.menu__wrapper

@@ -1,0 +1,12 @@
+.main
+	%header
+		= render "hosts/header"
+		= render "menu-bar"
+	.body{style: "overflow: auto; clear:both;" }
+		.content__menu
+			= link_to "message" , messages_path
+	.body__bottom{style: "margin-top:24px;"}
+	.content
+		.content__main
+			%footer
+				= render "users/footer"
