@@ -1,0 +1,118 @@
+.message{
+    &__body{
+    margin-left: 20%;
+    }
+	&__avatar{
+		height:60px;
+		width:60px;
+		margin-top:0;
+		float:none;
+	}
+	&__name{
+    font-size: 15px;
+    padding-bottom: 20px;
+	}
+    &__text{
+    width:50%;
+    float: left;
+    margin-right: 10px;
+    }
+    &__submit{
+        float:none;
+    }
+}
+
+.message__body:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    margin-top: -10px;
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #D9F0FF transparent transparent;
+}
+
+
+
+.chat-box {
+    width: 100%;
+    height: auto;
+    overflow: hidden; /*floatの解除*/
+    margin-bottom: 20px;
+}
+.chat-face {
+    float: right;
+    margin-left: 20px;
+}
+.chat-face img{
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 4px #ddd;
+}
+.chat-area {
+    width: 100%;
+    float: right;
+}
+.chat-hukidashi {
+    float:right;
+    display: inline-block; /*コメントの文字数に合わせて可変*/
+    padding: 15px 20px;
+    width: 60%;
+    margin-left: 120px;
+    margin-top: 8px;
+    /* border: 1px solid gray; ←削除 */
+    border-radius: 10px;
+    position: relative; /*追記*/
+    border: 1px solid #dce0e0;
+    background-color: #dce0e0;
+}
+/* ↓追記↓ */
+.chat-hukidashi:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    margin-top: -10px;
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 10px 10px 10px 10px;
+    border-color: transparent transparent transparent #dce0e0;
+}
+#messages{
+    overflow:scroll;
+    height:500px;
+	width:65%;
+}
+
+.opponent{
+    float:left;
+    &__face{
+        float:left;
+        margin: 0;
+    }
+    &__hukidashi{
+        float:left;
+        margin: 0;
+        margin-right: 50px;
+        background-color:white ;
+    }
+    &__hukidashi:after{
+    content: "";
+    position: absolute;
+    top: 50%; left: -10px;
+    margin-top: -10px;
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #dce0e0 transparent transparent;
+    }
+}
+
