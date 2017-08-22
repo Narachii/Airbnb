@@ -17,7 +17,7 @@
 			%li.info_list
 				=link_to "Help",root_path,class: "info"
 			%li.info_list
-				=link_to "Messages",root_path,class: "info"
+				=link_to "Messages",inbox_users_path,class: "info"
 			-if controller_name == "rooms" && current_user.id == @room.host.user.id
 				%li.info_list
 					=link_to "Edit", "/users/#{current_user.id}/hosts/#{current_user.host.id}/rooms/#{@room.id}/room_steps/home",method: :get,class: "info"
