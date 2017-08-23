@@ -6,10 +6,10 @@
 		.content__menu
 			-if current_user.image
 				= link_to messages_path,method: :get do
-					%span To messages
+					%span To message room
 			-else
 				= link_to media_users_path,method: :get do
-					%span To messages
+					%span To message room
 	.body__bottom{style: "margin-top:24px;"}
 	.content
 		.content__main
