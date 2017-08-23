@@ -4,7 +4,12 @@
 		= render "menu-bar"
 	.body{style: "overflow: auto; clear:both;" }
 		.content__menu
-			= link_to "message" , messages_path
+			-if current_user.image
+				= link_to messages_path,method: :get do
+					%span To message room
+			-else
+				= link_to media_users_path,method: :get do
+					%span To message room
 	.body__bottom{style: "margin-top:24px;"}
 	.content
 		.content__main

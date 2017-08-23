@@ -39,8 +39,15 @@
                     .data__text
                       Guests
                     = f.text_field :guest,class:"guest__form"
+              -if user_signed_in?
                 %div
                   = f.submit "Request to Book",{class: "next_form  side"}
+                %div{style: "text-align:center; clear:both;"}
+                  You won't be charged yet
+              -else
+                %div
+                  = link_to user_session_path do
+                    = f.submit "Request to Book",{class: "next_form  side"}
                 %div{style: "text-align:center; clear:both;"}
                   You won't be charged yet
       .body__wrapper

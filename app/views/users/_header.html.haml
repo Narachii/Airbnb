@@ -16,7 +16,7 @@
 				%li.info_list
 					=link_to "Help",root_path,method: :get,class: "info"
 				%li.info_list
-					=link_to "Messages",root_path,method: :get,class: "info"
+					=link_to "Messages",inbox_users_path,method: :get,class: "info"
 				%li.info_list
 					=link_to "Become a Host",user_hosts_path(current_user),method: :get,class: "info"
 			-else
@@ -40,9 +40,3 @@
 			%li.nav_list
 				.wrapper
 					=link_to "PLACES",root_path,method: :get,class: "nav"
-/ %li.info_list
-/ 	=link_to "Trips",root_path,class: "info"
-
-/ %li.info_list
-/ =link_to "Log Out",destroy_user_session_path, method: :delete,class: "info"
-/= image_tag @room.host.user.image_url,class: "avatar"
