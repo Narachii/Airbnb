@@ -11,4 +11,4 @@
 				%br
 					= message.created_at.strftime('%Y/%m/%d %H:%M')
 			%span{style: "display:none;"}
-				= $current_user
+				= message.user.id
