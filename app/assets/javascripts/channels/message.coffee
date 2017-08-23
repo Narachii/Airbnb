@@ -12,10 +12,21 @@ App.message = App.cable.subscriptions.create "MessageChannel",
 			html = data['message']
 			id = html.match(/\n\d+\n/)[0].replace(/\n/,"")
 			id = parseInt(id)
-			console.log(a)
+			console.log("current_user_id")
+			console.log(user_id)
+			console.log("sender")
+			console.log(id)
 			if user is id
+				console.log("current_user_id")
+				console.log(user_id)
+				console.log("sender")
+				console.log(id)
 				$('#messages').append html
 			else
+				console.log("current_user_id")
+				console.log(user_id)
+				console.log("sender")
+				console.log(id)
 				c_html1 = html.replace(/temp__face/,"opponent__face")
 				c_html2 = c_html1.replace(/temp__name/,"opponent__name")
 				c_html3 = c_html2.replace(/temp__hukidashi/,"opponent__hukidashi")
