@@ -116,3 +116,18 @@
     }
 }
 
+#translation{
+    background-color: #00a699;
+    transition: background 0.3s, border-color 0.3s;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 17px ;
+    line-height: 22px ;
+    letter-spacing: undefined;
+    padding: 9px 20px;
+    color: #ffffff;
+    font-weight: 400;
+}
