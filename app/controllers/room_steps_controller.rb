@@ -1,4 +1,5 @@
 class RoomStepsController < ApplicationController
+before_action :authenticate_user!
 	include Wicked::Wizard
 	steps :room, :bedrooms, :bed_details, :bathrooms , :locations, :amenities, :spaces,:image, :title, :description,:profile_photo,:phone,:home,:price
 # :image,:description,:title,:phone,:profile_photo
