@@ -45,6 +45,7 @@ gem 'momentjs-rails'
 gem 'dotenv-rails'
 gem 'execjs'
 gem 'redis'
+gem 'websocket-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
