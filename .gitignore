@@ -33,3 +33,5 @@ config/environments/production.rb
 app/.env.local
 
 app/.env.production
+
+.env

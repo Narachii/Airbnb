@@ -1,5 +1,6 @@
 $(document).ready(function() {
-key = <%= ENV["MS_KEY"] %>
+
+
   $('#translation').on('click',function() {
     const now = new Date();
     const nowtime = now.getTime();
@@ -18,7 +19,7 @@ key = <%= ENV["MS_KEY"] %>
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/jwt',
-            'Ocp-Apim-Subscription-Key': key,
+            'Ocp-Apim-Subscription-Key': "<%= ENV['MS_KEY'] %>",
           },
           async: false,
         }).done(function(data) {

@@ -42,7 +42,7 @@ gem "geocoder"
 gem "gmaps4rails"
 gem 'bootstrap3-datetimepicker-rails'
 gem 'momentjs-rails'
-gem 'dotenv-rails'
+gem 'dotenv-rails',require: 'dotenv/rails-now'
 gem 'execjs'
 gem 'redis'
 gem 'websocket-rails'
