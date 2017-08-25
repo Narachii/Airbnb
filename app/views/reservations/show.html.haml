@@ -1,0 +1,47 @@
+.main
+	%header
+		= render "hosts/header"
+		= render "users/menu-bar"
+	.body{style: "overflow: auto; clear:both;" }
+		.content__menu.message__body
+			.message__content
+				.h1{style: "font-size: 30px"} Messages
+				#messages
+					-if @messages
+						- @messages.each do |message|
+							.message{style: "clear:both;"}
+								.chat-box
+									.chat-area
+									-if current_user.id == message.user.id
+										.chat-face
+											= image_tag message.user.image_url,class: "profile__avatar message__avatar"
+											.message__name
+												= message.user.first_name
+										.chat-hukidashi
+											= message.body
+											%br
+											%br
+												= message.created_at.strftime('%Y/%m/%d %H:%M')
+									-else
+										.chat-face.opponent__face
+											= image_tag message.user.image_url,class: "profile__avatar message__avatar"
+											.message__name.opponent__name
+												= message.user.first_name
+										.chat-hukidashi.opponent__hukidashi
+											= message.body
+											%br
+											%br
+												= message.created_at.strftime('%Y/%m/%d %H:%M')
+			.div
+				= form_for @message ,remote: true do |f|
+					%br/
+					= f.text_area :body,rows: 3,class:"message__text",id: "form_id"
+					= f.hidden_field :user_id,value: current_user.id
+					= f.hidden_field :reservation_id,value: @reservation.id
+					= f.submit "Send",class: "next_form message__submit",id: "message_button"
+					%span#translation Translate
+	.body__bottom{style: "margin-top:24px;"}
+	.content
+		.content__main
+			%footer
+				= render "users/footer"
