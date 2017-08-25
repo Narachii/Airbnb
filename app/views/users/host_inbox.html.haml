@@ -22,7 +22,8 @@
 								%ul.inbox__wrapper{style: "clear: both;"}
 									%li.inbox__content{style: "float:left;"}
 										.chat-face.inbox__face
-											= image_tag reservation.user.image_url,class: "profile__avatar inbox__avatar"
+											= link_to user_path(id: reservation.user.id) do
+												= image_tag reservation.user.image_url,class: "profile__avatar inbox__avatar"
 											.inbox__name
 												= reservation.user.first_name
 									%li.inbox__date
