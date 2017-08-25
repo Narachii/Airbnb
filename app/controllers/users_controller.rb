@@ -17,6 +17,10 @@ before_action :authenticate_user!, :except => [:show, :index]
 		end
 	end
 
+	# def delete
+
+	# end
+
 	def show
 		@user = User.find(params[:id] )
 		month = ["January","February","March","April","May","June","July","August","September","October","November","December"]
@@ -28,8 +32,20 @@ before_action :authenticate_user!, :except => [:show, :index]
 	def inbox
 		@user = current_user
 		@messages = Message.all
+		if current_user.host.presence
+			@rooms = current_user.host.rooms
+		end
+		if current_user.reservations.presence
+			@reservations = Reservation.where(user_id: current_user.id)
+		end
 	end
 
+	def host_inbox
+		if current_user.host.presence
+			@rooms = current_user.host.rooms
+			@reservations = Reservation.where(user_id: current_user.id)
+		end
+	end
 
 	def media
 		@user = current_user

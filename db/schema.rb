@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170816035212) do
+ActiveRecord::Schema.define(version: 20170825054818) do
 
   create_table "amenities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -34,11 +34,13 @@ ActiveRecord::Schema.define(version: 20170816035212) do
   end
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "body",       limit: 65535
+    t.text     "body",           limit: 65535
     t.string   "image"
-    t.integer  "user_id",                  null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.integer  "user_id",                      null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "reservation_id"
+    t.index ["reservation_id"], name: "index_messages_on_reservation_id", using: :btree
     t.index ["user_id"], name: "fk_rails_273a25a7a6", using: :btree
   end
 
@@ -47,9 +49,10 @@ ActiveRecord::Schema.define(version: 20170816035212) do
     t.date     "date_out"
     t.integer  "user_id"
     t.integer  "room_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "guest"
+    t.boolean  "acceptance", default: false, null: false
   end
 
   create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -129,6 +132,7 @@ ActiveRecord::Schema.define(version: 20170816035212) do
 
   add_foreign_key "amenity_rooms", "amenities"
   add_foreign_key "amenity_rooms", "rooms"
+  add_foreign_key "messages", "reservations"
   add_foreign_key "messages", "users"
   add_foreign_key "space_rooms", "rooms"
   add_foreign_key "space_rooms", "spaces"

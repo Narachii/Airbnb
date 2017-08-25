@@ -44,14 +44,6 @@ before_action :authenticate_user!
 		end
 	end
 
-	# def finish_wizard_path
-	# 	@room = Room.find(params[:room_id])
-	# 	binding.pry
-	# 	@room.update(update_params)
-	# 	render_wizard @room
-	# 	user_host_path
-	# end
-
 	private
 
 	def room_params

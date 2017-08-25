@@ -38,7 +38,7 @@
 										-if current_user.image.present?
 											= image_tag current_user.image_url,class: "edit__profile"
 										-else
-											.i.fa.fa-user-circle-o.profile__avatar.edit__profile{style: "font-size:144px;"}
+											.i.fa.fa-user-circle-o.profile__avatar.edit__profile{style: "font-size:144px; float:left;"}
 							%div{style: "float:left; width:60%; padding:0 12px;"}
 								%div.row__text
 								Clear frontal face photos are an important way for hosts and guests to learn about each other.
