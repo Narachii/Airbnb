@@ -21,7 +21,7 @@ end
 
 private
 def create_params
-	params.require(:message).permit(:user_id, :body)
+	params.require(:message).permit(:user_id, :body,:reservation_id)
 end
 
 end
