@@ -1,0 +1,56 @@
+.main
+	%header
+		= render "hosts/header"
+		= render "menu-bar"
+	.body{style: "overflow: auto; clear:both;" }
+		.content__menu
+			-if current_user.image
+				= link_to inbox_users_path,method: :get do
+					%span.inbox__menu Reservation
+				= link_to host_inbox_users_path,method: :get do
+					%span.inbox__menu{style: "color: #FF5A5F;"} Host
+			-if current_user.host
+				-@rooms.each do |room|
+					.room__wrapper
+						.room__name{style: "clear:both;"}
+							= room.name
+					- if room.reservations.presence
+						#inbox__box
+							.room__reservation
+								Reservation List
+							- room.reservations.each do |reservation|
+								%ul.inbox__wrapper{style: "clear: both;"}
+									%li.inbox__content{style: "float:left;"}
+										.chat-face.inbox__face
+											= image_tag reservation.user.image_url,class: "profile__avatar inbox__avatar"
+											.inbox__name
+												= reservation.user.first_name
+									%li.inbox__date
+										Check In:
+										= reservation.data_in
+									%li.inbox__date
+										Check Out:
+										= reservation.date_out
+									%li{style: "margin-top:20px;"}
+									= form_for reservation ,method: :patch do |f|
+										= f.hidden_field :acceptance ,value: 1
+										- if reservation.acceptance == true
+											%ul
+												%li
+													= link_to reservation_path(reservation.id),method: :get do
+														%button.status__button.chat__button Chat
+												%li
+													= link_to reservation_path(reservation.id),method: :delete do
+														%button.status__button.decline{style: "width:11%;"} Delete
+										- else
+											= f.submit "Accept",class: "button status__button" ,id: "accept"
+											= link_to reservation_path(reservation.id),method: :delete do
+												%button.status__button.decline#decline Decline
+					- else
+						.inbox__message
+							No reservation
+	.body__bottom{style: "margin-top:24px;"}
+	.content
+		.content__main
+			%footer
+				= render "users/footer"
