@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'users#index'
+  resources :reservations, only: [:show,:update,:destroy]
   resources :rooms ,only: :show do
   	  resources :reservations, only: :create
   	end
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
     collection do
       get "media"
       get "inbox"
+      get "host_inbox"
     end
 	  resources :hosts do
 	  	resources :rooms do
