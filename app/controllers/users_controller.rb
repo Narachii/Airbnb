@@ -13,7 +13,7 @@ before_action :authenticate_user!, :except => [:show, :index]
 		@user = User.find(params[:id])
 		if current_user.id = @user.id
 			@user.update(user_params)
-			redirect_to root_path,method: :get
+			redirect_to edit_user_path(@user),method: :get,notice: 'Profile Updated Successfully'
 		end
 	end
 

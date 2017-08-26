@@ -13,7 +13,7 @@ before_action :authenticate_user! , :except => [:show, :index]
 		@room.save
 		@user = current_user
 		@user.update(progress: 1)
-		redirect_to user_host_room_room_steps_path(room_id: @room.id)
+		redirect_to user_host_room_room_steps_path(room_id: @room.id),method: :get,notice: 'Your room Created Successfully'
 	end
 
 	def show
