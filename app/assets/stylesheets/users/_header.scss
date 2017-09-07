@@ -4,17 +4,39 @@
 	padding: 8px 0;
 	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 		&__plan{
-			height:64px;
-			width:950px;
 			float:left;
 		}
 		.container{
+			position: absolute;
 			width:572px;
-			height:30px;
-			border: solid;
-			font-size:14px;
-			font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
-			line-height:30px;
+			&__place{
+				float: left;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 15px !important;
+    line-height: 18px !important;
+    letter-spacing: 0.2px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    color: #484848 !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: #ffffff !important;
+    border-radius: 2px !important;
+    background-color: #ffffff !important;
+    margin-bottom: 0px !important;
+    position: relative !important;
+    z-index: 0 !important;
+    margin-top: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    display: block !important;
+			}
+			&__date{
+				float: left;
+			}
+			&__guest{
+				float: left;
+			}
 		}
 
 
@@ -93,5 +115,37 @@
   white-space: nowrap;
 }
 
+#input{
+	&__place{
+border:none;
+	}
+	&__date{
+border:none;
+	}
+	&__guest{
+border:none;
+
+	}
+}
+
+    // font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    // font-size: 15px !important;
+    // line-height: 18px !important;
+    // letter-spacing: 0.2px !important;
+    // padding-top: 0px !important;
+    // padding-bottom: 0px !important;
+    // color: #484848 !important;
+    // border-width: 1px !important;
+    // border-style: solid !important;
+    // border-color: #ffffff !important;
+    // border-radius: 2px !important;
+    // background-color: #ffffff !important;
+    // margin-bottom: 0px !important;
+    // position: relative !important;
+    // z-index: 0 !important;
+    // margin-top: 0px !important;
+    // margin-left: 0px !important;
+    // margin-right: 0px !important;
+    // display: block !important;
 
 

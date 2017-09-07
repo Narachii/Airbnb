@@ -3,7 +3,17 @@
 		=link_to image_tag("logo2.jpg", class: "logo"),root_path, method: :get
 	.head-content__plan
 		.container
-			Add "plan box" later
+			.container__place
+				%i.fa.fa-search{style: "float: left;"}
+				%input#input__place{type: "text",placeholder:"Anywhere" }
+			.container__date
+				%div
+					%i.fa.fa-calendar-o{style: "float: left;"}
+					%input#input__date{type: "text",placeholder:"Anytime" }
+			.container__guest
+				%div
+					%i.fa.fa-user-o{style: "float: left;"}
+					%input#input__guest{type: "text",placeholder:"1 guest" }
 	.head-content__info
 		%ul
 			-if user_signed_in?
